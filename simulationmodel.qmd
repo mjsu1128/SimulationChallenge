@@ -58,7 +58,55 @@ cat("Expected Value = $", expected_value, "\n", sep = "")
 cat("\nAnswer: The expected value after 1 coin flip is $", expected_value, "\n", sep = "")
 ```
 
+**Discussion of Results:**
+
+The expected value analysis reveals a counterintuitive but mathematically sound result: despite the asymmetric nature of the game (50% gain vs. 40% loss), the expected value is positive at $1,050. This represents a 5% expected return per coin flip, which seems favorable at first glance. However, this analysis only considers the average outcome over many trials. In reality, the multiplicative nature of the game creates significant volatility - a single bad streak of tails could dramatically reduce your balance, while a streak of heads could lead to substantial gains. The expected value calculation assumes we can play this game many times, but in practice, you only get one sequence of coin flips until age 55. This highlights the important distinction between expected value (what happens on average) and actual outcomes (what happens in your specific case), which is a key concept in understanding why this seemingly profitable game might not be as attractive as it initially appears.
+
 2. **Expectation vs. Reality:** Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000?
+
+```{r}
+#| label: expectation-reality
+#| echo: true
+
+# Use the same parameters from Question 1
+initial_balance <- 1000
+expected_value <- 1050  # From previous calculation
+
+# Calculate the difference from initial balance
+expected_difference <- expected_value - initial_balance
+expected_return_percent <- (expected_difference / initial_balance) * 100
+
+# Analysis
+cat("Expectation vs. Reality Analysis:\n")
+cat("===============================\n")
+cat("Initial balance: $", initial_balance, "\n", sep = "")
+cat("Expected value after 1 flip: $", expected_value, "\n", sep = "")
+cat("Expected difference: $", expected_difference, "\n", sep = "")
+cat("Expected return: ", expected_return_percent, "%\n", sep = "")
+cat("\n")
+
+# Determine if positive or negative
+if (expected_difference > 0) {
+  cat("✓ The expected value is POSITIVE\n")
+  cat("✓ You expect your account to be worth MORE than $1,000\n")
+  cat("✓ Expected gain: $", expected_difference, " (", expected_return_percent, "%)\n", sep = "")
+} else if (expected_difference < 0) {
+  cat("✗ The expected value is NEGATIVE\n")
+  cat("✗ You expect your account to be worth LESS than $1,000\n")
+  cat("✗ Expected loss: $", abs(expected_difference), " (", abs(expected_return_percent), "%)\n", sep = "")
+} else {
+  cat("= The expected value is ZERO\n")
+  cat("= You expect your account to be worth the SAME as $1,000\n")
+}
+
+cat("\nKey Insight:\n")
+cat("The positive expected value suggests this game is theoretically favorable.\n")
+cat("However, this is just the average outcome - your actual result could be very different!\n")
+```
+
+**Discussion of Results:**
+
+The expectation vs. reality analysis confirms that the game appears mathematically favorable with a positive expected value of $1,050, representing a 5% expected return per coin flip. This suggests that, on average, players should expect to gain money. However, this analysis reveals a critical gap between theoretical expectations and practical outcomes. The positive expected value is based on the assumption that you can play this game many times, allowing the law of large numbers to work in your favor. In reality, you only get one sequence of coin flips from your current age until 55, which means you're subject to the full volatility of the game without the benefit of averaging. This creates a paradox: while the game is theoretically profitable, the high variance means you could easily end up with significantly less than your initial $1,000 investment. The 5% expected return per flip sounds attractive, but it doesn't account for the risk of ruin or the psychological impact of potentially large losses. This highlights why expected value alone is insufficient for decision-making in high-variance scenarios - you need to consider the entire distribution of possible outcomes, not just the average.
 
 3. **Single Simulation:** Run one simulation showing account balance over time. Create a plot and comment on the results.
 
