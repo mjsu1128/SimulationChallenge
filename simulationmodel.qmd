@@ -114,8 +114,94 @@ The expectation vs. reality analysis confirms that the game appears mathematical
 #| label: single-simulation
 #| echo: true
 
-# Your code here
+# Set seed for reproducibility
+set.seed(123)
+
+# Parameters
+initial_balance <- 1000
+heads_multiplier <- 1.5  # +50% gain
+tails_multiplier <- 0.6  # -40% loss
+n_years <- 35  # Assuming you start at age 20, play until 55
+
+# Function to simulate one complete game
+simulate_investment_game <- function(initial, years, heads_mult, tails_mult) {
+  balance <- initial
+  balance_history <- numeric(years + 1)
+  balance_history[1] <- initial
+  
+  for (year in 1:years) {
+    # Flip coin (1 = heads, 0 = tails)
+    coin_flip <- rbinom(1, 1, 0.5)
+    
+    if (coin_flip == 1) {
+      # Heads: gain 50%
+      balance <- balance * heads_mult
+    } else {
+      # Tails: lose 40%
+      balance <- balance * tails_mult
+    }
+    
+    balance_history[year + 1] <- balance
+  }
+  
+  return(balance_history)
+}
+
+# Run single simulation
+simulation_result <- simulate_investment_game(initial_balance, n_years, heads_multiplier, tails_multiplier)
+
+# Create data frame for plotting
+simulation_data <- data.frame(
+  year = 0:n_years,
+  age = 20:(20 + n_years),
+  balance = simulation_result
+)
+
+# Display key results
+cat("Single Simulation Results:\n")
+cat("========================\n")
+cat("Initial balance (age 20): $", initial_balance, "\n", sep = "")
+cat("Final balance (age 55): $", round(simulation_result[length(simulation_result)], 2), "\n", sep = "")
+cat("Total return: $", round(simulation_result[length(simulation_result)] - initial_balance, 2), "\n", sep = "")
+cat("Total return %: ", round(((simulation_result[length(simulation_result)] / initial_balance) - 1) * 100, 2), "%\n", sep = "")
+cat("Maximum balance reached: $", round(max(simulation_result), 2), "\n", sep = "")
+cat("Minimum balance reached: $", round(min(simulation_result), 2), "\n", sep = "")
+
+# Create the plot
+library(ggplot2)
+
+ggplot(simulation_data, aes(x = age, y = balance)) +
+  geom_line(color = "steelblue", linewidth = 1.2) +
+  geom_point(color = "darkblue", size = 1.5) +
+  geom_hline(yintercept = initial_balance, color = "red", linetype = "dashed", linewidth = 1) +
+  labs(
+    title = "Investment Game: Single Simulation Path",
+    subtitle = "Account Balance from Age 20 to 55",
+    x = "Age",
+    y = "Account Balance ($)",
+    caption = "Red dashed line shows initial investment of $1,000"
+  ) +
+  scale_y_continuous(labels = scales::dollar_format()) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    plot.subtitle = element_text(size = 12, color = "gray50"),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11)
+  ) +
+  scale_x_continuous(breaks = seq(20, 55, 5))
+
+# Show first few and last few years
+cat("\nFirst 10 years:\n")
+print(simulation_data[1:11, c("age", "balance")])
+
+cat("\nLast 10 years:\n")
+print(simulation_data[(nrow(simulation_data)-9):nrow(simulation_data), c("age", "balance")])
 ```
+
+**Comments on the Results:**
+
+The results of the simulation were extremely positive! At age 55 I ended with around $25,000 in my account. However, my account experienced a signficant drop during my last coin flip which resulted in my losing $15,000. While this last flip was painful, I'm still very happy overall with the results!
 
 ### 85% Grade
 
