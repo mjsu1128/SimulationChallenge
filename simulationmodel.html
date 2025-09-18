@@ -173,12 +173,85 @@ Expected Value = P(Heads) × Heads_Outcome + P(Tails) × Tails_Outcome</code></p
 Answer: The expected value after 1 coin flip is $1050</code></pre>
 </div>
 </div>
+<p><strong>Discussion of Results:</strong></p>
+<p>The expected value analysis reveals a counterintuitive but mathematically sound result: despite the asymmetric nature of the game (50% gain vs. 40% loss), the expected value is positive at $1,050. This represents a 5% expected return per coin flip, which seems favorable at first glance. However, this analysis only considers the average outcome over many trials. In reality, the multiplicative nature of the game creates significant volatility - a single bad streak of tails could dramatically reduce your balance, while a streak of heads could lead to substantial gains. The expected value calculation assumes we can play this game many times, but in practice, you only get one sequence of coin flips until age 55. This highlights the important distinction between expected value (what happens on average) and actual outcomes (what happens in your specific case), which is a key concept in understanding why this seemingly profitable game might not be as attractive as it initially appears.</p>
 <ol start="2" type="1">
-<li><p><strong>Expectation vs. Reality:</strong> Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000?</p></li>
-<li><p><strong>Single Simulation:</strong> Run one simulation showing account balance over time. Create a plot and comment on the results.</p></li>
+<li><strong>Expectation vs. Reality:</strong> Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the same parameters from Question 1</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>expected_value <span class="ot">&lt;-</span> <span class="dv">1050</span>  <span class="co"># From previous calculation</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the difference from initial balance</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>expected_difference <span class="ot">&lt;-</span> expected_value <span class="sc">-</span> initial_balance</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>expected_return_percent <span class="ot">&lt;-</span> (expected_difference <span class="sc">/</span> initial_balance) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expectation vs. Reality Analysis:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expectation vs. Reality Analysis:</code></pre>
+</div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;===============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>===============================</code></pre>
+</div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance: $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Initial balance: $1000</code></pre>
+</div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected value after 1 flip: $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected value after 1 flip: $1050</code></pre>
+</div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected difference: $&quot;</span>, expected_difference, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected difference: $50</code></pre>
+</div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected return: &quot;</span>, expected_return_percent, <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected return: 5%</code></pre>
+</div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine if positive or negative</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (expected_difference <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ The expected value is POSITIVE</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ You expect your account to be worth MORE than $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ Expected gain: $&quot;</span>, expected_difference, <span class="st">&quot; (&quot;</span>, expected_return_percent, <span class="st">&quot;%)</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (expected_difference <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ The expected value is NEGATIVE</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ You expect your account to be worth LESS than $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ Expected loss: $&quot;</span>, <span class="fu">abs</span>(expected_difference), <span class="st">&quot; (&quot;</span>, <span class="fu">abs</span>(expected_return_percent), <span class="st">&quot;%)</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;= The expected value is ZERO</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;= You expect your account to be worth the SAME as $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>✓ The expected value is POSITIVE
+✓ You expect your account to be worth MORE than $1,000
+✓ Expected gain: $50 (5%)</code></pre>
+</div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Key Insight:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Key Insight:</code></pre>
+</div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The positive expected value suggests this game is theoretically favorable.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The positive expected value suggests this game is theoretically favorable.</code></pre>
+</div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;However, this is just the average outcome - your actual result could be very different!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>However, this is just the average outcome - your actual result could be very different!</code></pre>
+</div>
+</div>
+<p><strong>Discussion of Results:</strong></p>
+<p>The expectation vs. reality analysis confirms that the game appears mathematically favorable with a positive expected value of $1,050, representing a 5% expected return per coin flip. This suggests that, on average, players should expect to gain money. However, this analysis reveals a critical gap between theoretical expectations and practical outcomes. The positive expected value is based on the assumption that you can play this game many times, allowing the law of large numbers to work in your favor. In reality, you only get one sequence of coin flips from your current age until 55, which means you’re subject to the full volatility of the game without the benefit of averaging. This creates a paradox: while the game is theoretically profitable, the high variance means you could easily end up with significantly less than your initial $1,000 investment. The 5% expected return per flip sounds attractive, but it doesn’t account for the risk of ruin or the psychological impact of potentially large losses. This highlights why expected value alone is insufficient for decision-making in high-variance scenarios - you need to consider the entire distribution of possible outcomes, not just the average.</p>
+<ol start="3" type="1">
+<li><strong>Single Simulation:</strong> Run one simulation showing account balance over time. Create a plot and comment on the results.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb44"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
 </div>
 </section>
 <section id="grade-1" class="level3">
@@ -187,7 +260,7 @@ Answer: The expected value after 1 coin flip is $1050</code></pre>
 <li><strong>Multiple Simulations:</strong> Run 100 simulations. Create a probability distribution plot of final balances at age 55.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
 </div>
 </section>
 <section id="grade-2" class="level3">
@@ -196,7 +269,7 @@ Answer: The expected value after 1 coin flip is $1050</code></pre>
 <li><strong>Probability Analysis:</strong> What is the probability that your balance will be greater than $1,000 at age 55?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
 </div>
 </section>
 <section id="grade-3" class="level3">
@@ -205,7 +278,7 @@ Answer: The expected value after 1 coin flip is $1050</code></pre>
 <li><strong>Strategy Comparison:</strong> Run 100 simulations for the modified strategy. What is the probability of having more than $10,000 at age 55? Compare with the original game.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
 </div>
 </section>
 </section>
