@@ -558,9 +558,229 @@ average.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Your code here}
+\CommentTok{\# Set seed for reproducibility}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\CommentTok{\# Parameters}
+\NormalTok{initial\_balance }\OtherTok{\textless{}{-}} \DecValTok{1000}
+\NormalTok{heads\_multiplier }\OtherTok{\textless{}{-}} \FloatTok{1.5}  \CommentTok{\# +50\% gain}
+\NormalTok{tails\_multiplier }\OtherTok{\textless{}{-}} \FloatTok{0.6}  \CommentTok{\# {-}40\% loss}
+\NormalTok{n\_years }\OtherTok{\textless{}{-}} \DecValTok{35}  \CommentTok{\# Assuming you start at age 20, play until 55}
+
+\CommentTok{\# Function to simulate one complete game}
+\NormalTok{simulate\_investment\_game }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(initial, years, heads\_mult, tails\_mult) \{}
+\NormalTok{  balance }\OtherTok{\textless{}{-}}\NormalTok{ initial}
+\NormalTok{  balance\_history }\OtherTok{\textless{}{-}} \FunctionTok{numeric}\NormalTok{(years }\SpecialCharTok{+} \DecValTok{1}\NormalTok{)}
+\NormalTok{  balance\_history[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ initial}
+  
+  \ControlFlowTok{for}\NormalTok{ (year }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{years) \{}
+    \CommentTok{\# Flip coin (1 = heads, 0 = tails)}
+\NormalTok{    coin\_flip }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{0.5}\NormalTok{)}
+    
+    \ControlFlowTok{if}\NormalTok{ (coin\_flip }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) \{}
+      \CommentTok{\# Heads: gain 50\%}
+\NormalTok{      balance }\OtherTok{\textless{}{-}}\NormalTok{ balance }\SpecialCharTok{*}\NormalTok{ heads\_mult}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+      \CommentTok{\# Tails: lose 40\%}
+\NormalTok{      balance }\OtherTok{\textless{}{-}}\NormalTok{ balance }\SpecialCharTok{*}\NormalTok{ tails\_mult}
+\NormalTok{    \}}
+    
+\NormalTok{    balance\_history[year }\SpecialCharTok{+} \DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ balance}
+\NormalTok{  \}}
+  
+  \FunctionTok{return}\NormalTok{(balance\_history)}
+\NormalTok{\}}
+
+\CommentTok{\# Run single simulation}
+\NormalTok{simulation\_result }\OtherTok{\textless{}{-}} \FunctionTok{simulate\_investment\_game}\NormalTok{(initial\_balance, n\_years, heads\_multiplier, tails\_multiplier)}
+
+\CommentTok{\# Create data frame for plotting}
+\NormalTok{simulation\_data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{year =} \DecValTok{0}\SpecialCharTok{:}\NormalTok{n\_years,}
+  \AttributeTok{age =} \DecValTok{20}\SpecialCharTok{:}\NormalTok{(}\DecValTok{20} \SpecialCharTok{+}\NormalTok{ n\_years),}
+  \AttributeTok{balance =}\NormalTok{ simulation\_result}
+\NormalTok{)}
+
+\CommentTok{\# Display key results}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Single Simulation Results:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+Single Simulation Results:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"========================}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+========================
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Initial balance (age 20): $"}\NormalTok{, initial\_balance, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Initial balance (age 20): $1000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Final balance (age 55): $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(simulation\_result[}\FunctionTok{length}\NormalTok{(simulation\_result)], }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Final balance (age 55): $24429.47
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total return: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(simulation\_result[}\FunctionTok{length}\NormalTok{(simulation\_result)] }\SpecialCharTok{{-}}\NormalTok{ initial\_balance, }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Total return: $23429.47
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total return \%: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(((simulation\_result[}\FunctionTok{length}\NormalTok{(simulation\_result)] }\SpecialCharTok{/}\NormalTok{ initial\_balance) }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{), }\StringTok{"\%}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Total return %: 2342.95%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Maximum balance reached: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{max}\NormalTok{(simulation\_result), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Maximum balance reached: $40715.78
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Minimum balance reached: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{min}\NormalTok{(simulation\_result), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Minimum balance reached: $540
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Create the plot}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\FunctionTok{ggplot}\NormalTok{(simulation\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age, }\AttributeTok{y =}\NormalTok{ balance)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"steelblue"}\NormalTok{, }\AttributeTok{linewidth =} \FloatTok{1.2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{"darkblue"}\NormalTok{, }\AttributeTok{size =} \FloatTok{1.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_hline}\NormalTok{(}\AttributeTok{yintercept =}\NormalTok{ initial\_balance, }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{linewidth =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Investment Game: Single Simulation Path"}\NormalTok{,}
+    \AttributeTok{subtitle =} \StringTok{"Account Balance from Age 20 to 55"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Age"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Account Balance ($)"}\NormalTok{,}
+    \AttributeTok{caption =} \StringTok{"Red dashed line shows initial investment of $1,000"}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\FunctionTok{dollar\_format}\NormalTok{()) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}
+    \AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{14}\NormalTok{, }\AttributeTok{face =} \StringTok{"bold"}\NormalTok{),}
+    \AttributeTok{plot.subtitle =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{12}\NormalTok{, }\AttributeTok{color =} \StringTok{"gray50"}\NormalTok{),}
+    \AttributeTok{axis.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{10}\NormalTok{),}
+    \AttributeTok{axis.title =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{11}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{55}\NormalTok{, }\DecValTok{5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\pandocbounded{\includegraphics[keepaspectratio]{simulationmodel_files/figure-pdf/single-simulation-1.pdf}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Show first few and last few years}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{First 10 years:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+First 10 years:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(simulation\_data[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{11}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"age"}\NormalTok{, }\StringTok{"balance"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   age  balance
+1   20 1000.000
+2   21  600.000
+3   22  900.000
+4   23  540.000
+5   24  810.000
+6   25 1215.000
+7   26  729.000
+8   27 1093.500
+9   28 1640.250
+10  29 2460.375
+11  30 1476.225
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Last 10 years:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Last 10 years:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(simulation\_data[(}\FunctionTok{nrow}\NormalTok{(simulation\_data)}\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{)}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(simulation\_data), }\FunctionTok{c}\NormalTok{(}\StringTok{"age"}\NormalTok{, }\StringTok{"balance"}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   age   balance
+27  46  9929.163
+28  47 14893.745
+29  48 22340.618
+30  49 13404.371
+31  50  8042.622
+32  51 12063.934
+33  52 18095.900
+34  53 27143.850
+35  54 40715.776
+36  55 24429.465
+\end{verbatim}
+
+\textbf{Comments on the Results:}
+
+The results of the simulation were extremely positive! At age 55 I ended
+with around \$25,000 in my account. However, my account experienced a
+signficant drop during my last coin flip which resulted in my losing
+\$15,000. While this last flip was painful, I'm still very happy overall
+with the results!
 
 \subsubsection{85\% Grade}\label{grade-1}
 
