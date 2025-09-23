@@ -444,7 +444,173 @@ The analysis shows that while the investment game has a positive expected value,
 
 ```{r}
 #| label: strategy-comparison
-#| echo: true
+#| #| echo: true
+# Question 6: Strategy Comparison
+# Set seed for reproducibility
+set.seed(123)
 
-# Your code here
+# Parameters for both strategies
+initial_balance <- 1000
+n_years <- 35  # Age 20 to 55
+n_simulations <- 100
+
+# Original strategy parameters
+orig_heads_multiplier <- 1.5  # +50% gain
+orig_tails_multiplier <- 0.6  # -40% loss
+
+# Modified strategy parameters (bet exactly 50% of current balance)
+mod_heads_multiplier <- 1.5  # +50% gain on the 50% bet
+mod_tails_multiplier <- 0.5  # -50% loss on the 50% bet
+
+# Function to simulate original strategy
+simulate_original_strategy <- function(initial, years, heads_mult, tails_mult) {
+  balance <- initial
+  for (year in 1:years) {
+    coin_flip <- rbinom(1, 1, 0.5)
+    if (coin_flip == 1) {
+      balance <- balance * heads_mult
+    } else {
+      balance <- balance * tails_mult
+    }
+  }
+  return(balance)
+}
+
+# Function to simulate modified strategy (bet 50% of current balance)
+simulate_modified_strategy <- function(initial, years) {
+  balance <- initial
+  for (year in 1:years) {
+    coin_flip <- rbinom(1, 1, 0.5)
+    bet_amount <- balance * 0.5  # Bet exactly 50% of current balance
+    
+    if (coin_flip == 1) {
+      # Heads: gain 50% on the bet
+      balance <- balance - bet_amount + (bet_amount * 1.5)
+    } else {
+      # Tails: lose 50% on the bet
+      balance <- balance - bet_amount + (bet_amount * 0.5)
+    }
+  }
+  return(balance)
+}
+
+# Run 100 simulations for original strategy
+cat("Running 100 simulations for Original Strategy...\n")
+orig_final_balances <- replicate(n_simulations, 
+  simulate_original_strategy(initial_balance, n_years, orig_heads_multiplier, orig_tails_multiplier))
+
+# Run 100 simulations for modified strategy
+cat("Running 100 simulations for Modified Strategy...\n")
+mod_final_balances <- replicate(n_simulations, 
+  simulate_modified_strategy(initial_balance, n_years))
+
+# Calculate probabilities for both strategies
+orig_prob_above_1000 <- mean(orig_final_balances > 1000)
+orig_prob_above_10000 <- mean(orig_final_balances > 10000)
+mod_prob_above_1000 <- mean(mod_final_balances > 1000)
+mod_prob_above_10000 <- mean(mod_final_balances > 10000)
+
+# Calculate summary statistics
+orig_mean <- mean(orig_final_balances)
+orig_median <- median(orig_final_balances)
+orig_sd <- sd(orig_final_balances)
+mod_mean <- mean(mod_final_balances)
+mod_median <- median(mod_final_balances)
+mod_sd <- sd(mod_final_balances)
+
+# Display comparison results
+cat("\nStrategy Comparison Results:\n")
+cat("============================\n\n")
+
+cat("ORIGINAL STRATEGY (100% of balance at risk):\n")
+cat("  Mean final balance: $", round(orig_mean, 2), "\n", sep = "")
+cat("  Median final balance: $", round(orig_median, 2), "\n", sep = "")
+cat("  Standard deviation: $", round(orig_sd, 2), "\n", sep = "")
+cat("  Probability > $1,000: ", round(orig_prob_above_1000 * 100, 1), "%\n", sep = "")
+cat("  Probability > $10,000: ", round(orig_prob_above_10000 * 100, 1), "%\n", sep = "")
+cat("  Min balance: $", round(min(orig_final_balances), 2), "\n", sep = "")
+cat("  Max balance: $", round(max(orig_final_balances), 2), "\n", sep = "")
+
+cat("\nMODIFIED STRATEGY (50% of balance at risk):\n")
+cat("  Mean final balance: $", round(mod_mean, 2), "\n", sep = "")
+cat("  Median final balance: $", round(mod_median, 2), "\n", sep = "")
+cat("  Standard deviation: $", round(mod_sd, 2), "\n", sep = "")
+cat("  Probability > $1,000: ", round(mod_prob_above_1000 * 100, 1), "%\n", sep = "")
+cat("  Probability > $10,000: ", round(mod_prob_above_10000 * 100, 1), "%\n", sep = "")
+cat("  Min balance: $", round(min(mod_final_balances), 2), "\n", sep = "")
+cat("  Max balance: $", round(max(mod_final_balances), 2), "\n", sep = "")
+
+# Create comparison data frame
+comparison_data <- data.frame(
+  Strategy = rep(c("Original", "Modified"), each = n_simulations),
+  Final_Balance = c(orig_final_balances, mod_final_balances)
+)
+
+# Create comparison plot
+library(ggplot2)
+
+p_comparison <- ggplot(comparison_data, aes(x = Final_Balance, fill = Strategy)) +
+  geom_histogram(alpha = 0.7, bins = 20, position = "identity") +
+  geom_vline(xintercept = 1000, color = "red", linetype = "dashed", linewidth = 1) +
+  geom_vline(xintercept = 10000, color = "blue", linetype = "dashed", linewidth = 1) +
+  facet_wrap(~ Strategy, scales = "free_y") +
+  labs(
+    title = "Strategy Comparison: Final Balance Distributions",
+    subtitle = "100 Simulations Each - Original vs Modified Strategy",
+    x = "Final Balance at Age 55 ($)",
+    y = "Frequency",
+    caption = "Red line = $1,000 | Blue line = $10,000"
+  ) +
+  scale_x_continuous(labels = scales::dollar_format()) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    plot.subtitle = element_text(size = 12, color = "gray50"),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11),
+    legend.position = "bottom"
+  )
+
+print(p_comparison)
+
+# Statistical comparison
+cat("\nSTATISTICAL COMPARISON:\n")
+cat("======================\n")
+cat("Difference in mean final balance: $", round(mod_mean - orig_mean, 2), "\n", sep = "")
+cat("Difference in probability > $1,000: ", round((mod_prob_above_1000 - orig_prob_above_1000) * 100, 1), " percentage points\n", sep = "")
+cat("Difference in probability > $10,000: ", round((mod_prob_above_10000 - orig_prob_above_10000) * 100, 1), " percentage points\n", sep = "")
+
+# Risk assessment
+cat("\nRISK ASSESSMENT:\n")
+cat("================\n")
+cat("Original strategy volatility (CV): ", round(orig_sd / orig_mean, 3), "\n", sep = "")
+cat("Modified strategy volatility (CV): ", round(mod_sd / mod_mean, 3), "\n", sep = "")
+
+if (mod_sd / mod_mean < orig_sd / orig_mean) {
+  cat("✓ Modified strategy has LOWER relative volatility\n")
+} else {
+  cat("✗ Modified strategy has HIGHER relative volatility\n")
+}
+
+cat("\nCONCLUSION:\n")
+cat("===========\n")
+if (mod_prob_above_10000 > orig_prob_above_10000) {
+  cat("✓ Modified strategy has HIGHER probability of reaching $10,000+\n")
+} else {
+  cat("✗ Modified strategy has LOWER probability of reaching $10,000+\n")
+}
+
+if (mod_prob_above_1000 > orig_prob_above_1000) {
+  cat("✓ Modified strategy has HIGHER probability of staying above $1,000\n")
+} else {
+  cat("✗ Modified strategy has LOWER probability of staying above $1,000\n")
+}
 ```
+
+**Comments on the Results:** {.results}
+
+The strategy comparison reveals fascinating insights about risk management in investment strategies. The modified strategy, which only risks 50% of the current balance on each flip, shows significantly different characteristics compared to the original strategy that risks 100% of the balance. 
+
+The modified strategy demonstrates lower volatility and more conservative outcomes, with a higher probability of maintaining wealth above the initial $1,000 threshold. However, this comes at the cost of lower expected returns and reduced probability of achieving the high-reward outcomes that make the original strategy potentially lucrative.
+
+This analysis highlights a fundamental trade-off in investment strategy design: **risk reduction comes at the cost of potential upside**. The modified strategy provides more consistent, predictable outcomes but sacrifices the possibility of extreme gains that characterize the original high-risk approach. This comparison is particularly valuable for understanding how different risk management approaches can fundamentally alter the probability distribution of investment outcomes.
