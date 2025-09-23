@@ -8,10 +8,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<meta name="author" content="Your Name" />
-<meta name="dcterms.date" content="2025-09-23" />
 
-<title>Investment Simulation Challenge</title>
+<title>Simulation Challenge</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,199 +60,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 <!-- htmldependencies:E3FAD763 -->
-<!-- Custom Header for Investment Simulation Challenge -->
-<style>
-/* Additional custom styles */
-.title {
-  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin-top: 0.5rem;
-  font-weight: 300;
-}
-
-/* Question styling */
-.question {
-  background-color: #f8f9fa;
-  border-left: 5px solid #3498db;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.question h3 {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-/* Results highlighting */
-.results {
-  background-color: #e8f5e8;
-  border: 1px solid #27ae60;
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem 0;
-  font-weight: 500;
-}
-
-.results strong {
-  color: #27ae60;
-  font-size: 1.1rem;
-}
-
-/* Code output styling */
-.cell-output-stdout pre {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  border: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Navigation improvements */
-.navbar {
-  background-color: #2c3e50;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.navbar-brand {
-  color: white !important;
-  font-weight: 600;
-}
-
-/* Footer styling */
-.footer {
-  background-color: #34495e;
-  color: white;
-  padding: 2rem 0;
-  margin-top: 3rem;
-  text-align: center;
-}
-
-/* Animation for interactive elements */
-.btn, .alert, .question {
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3498db;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2980b9;
-}
-</style>
-
-<!-- Add some interactive JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling to anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-  
-  // Add copy functionality to code blocks
-  document.querySelectorAll('pre code').forEach(block => {
-    const button = document.createElement('button');
-    button.textContent = 'Copy';
-    button.className = 'copy-btn';
-    button.style.cssText = `
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: #3498db;
-      color: white;
-      border: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.8rem;
-    `;
-    
-    const pre = block.parentElement;
-    pre.style.position = 'relative';
-    pre.appendChild(button);
-    
-    button.addEventListener('click', function() {
-      navigator.clipboard.writeText(block.textContent).then(() => {
-        button.textContent = 'Copied!';
-        setTimeout(() => {
-          button.textContent = 'Copy';
-        }, 2000);
-      });
-    });
-  });
-});
-</script>
 
 
-<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <div id="quarto-toc-target"></div>
 </div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Investment Simulation Challenge</h1>
-<p class="subtitle lead">Monte Carlo Analysis of High-Risk Investment Strategy</p>
+<h1 class="title">Simulation Challenge</h1>
+<p class="subtitle lead">Monte Carlo Analysis</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 23, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -263,53 +90,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#investment-simulation-challenge" id="toc-investment-simulation-challenge"><span class="header-section-number">1</span> Investment Simulation Challenge</a>
-  <ul>
-  <li><a href="#the-investment-game" id="toc-the-investment-game"><span class="header-section-number">1.1</span> The Investment Game</a>
-  <ul>
-  <li><a href="#original-game-strategy" id="toc-original-game-strategy"><span class="header-section-number">1.1.1</span> Original Game Strategy</a></li>
-  <li><a href="#modified-game-strategy" id="toc-modified-game-strategy"><span class="header-section-number">1.1.2</span> Modified Game Strategy</a></li>
-  </ul></li>
-  <li><a href="#questions-to-answer" id="toc-questions-to-answer"><span class="header-section-number">1.2</span> Questions to Answer</a>
-  <ul>
-  <li><a href="#grade" id="toc-grade"><span class="header-section-number">1.2.1</span> 75% Grade</a></li>
-  <li><a href="#grade-1" id="toc-grade-1"><span class="header-section-number">1.2.2</span> 85% Grade</a></li>
-  <li><a href="#grade-2" id="toc-grade-2"><span class="header-section-number">1.2.3</span> 95% Grade</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion"><span class="header-section-number">1.3</span> Conclusion</a>
-  <ul>
-  <li><a href="#grade-3" id="toc-grade-3"><span class="header-section-number">1.3.1</span> 100% Grade</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-<section id="investment-simulation-challenge" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Investment Simulation Challenge</h1>
-<section id="the-investment-game" class="level2" data-number="1.1">
-<h2 data-number="1.1"><span class="header-section-number">1.1</span> The Investment Game</h2>
-<section id="original-game-strategy" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1"><span class="header-section-number">1.1.1</span> Original Game Strategy</h3>
+
+<section id="simulation-challenge" class="level1">
+<h1>Simulation Challenge</h1>
+<section id="the-investment-game" class="level2">
+<h2>The Investment Game</h2>
+<section id="original-game-strategy" class="level3">
+<h3>Original Game Strategy</h3>
 <p>You are given $1,000 to play this game: Flip a coin each year until age 55. If heads, increase your balance by 50%. If tails, reduce your balance by 40%.</p>
 </section>
-<section id="modified-game-strategy" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2"><span class="header-section-number">1.1.2</span> Modified Game Strategy</h3>
+<section id="modified-game-strategy" class="level3">
+<h3>Modified Game Strategy</h3>
 <p>Same as above, but you must bet exactly 50% of your current balance on each flip.</p>
 </section>
 </section>
-<section id="questions-to-answer" class="level2" data-number="1.2">
-<h2 data-number="1.2"><span class="header-section-number">1.2</span> Questions to Answer</h2>
-<section id="grade" class="level3 alert alert-info" data-number="1.2.1">
-<h3 class="alert alert-info" data-number="1.2.1"><span class="header-section-number">1.2.1</span> 75% Grade</h3>
+<section id="questions-to-answer" class="level2">
+<h2>Questions to Answer</h2>
+<section id="grade" class="level3">
+<h3>75% Grade</h3>
 <ol type="1">
 <li><strong>Expected Value Analysis:</strong> What is the expected value after 1 coin flip for the original game?</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for the original game</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span>  <span class="co"># +50% gain</span></span>
@@ -325,78 +127,47 @@ document.addEventListener('DOMContentLoaded', function() {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Value Analysis (1 coin flip):</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expected Value Analysis (1 coin flip):</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;=====================================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>=====================================</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance: $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Initial balance: $1000</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Heads outcome (50% gain): $&quot;</span>, heads_outcome, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Heads outcome (50% gain): $1500</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Tails outcome (40% loss): $&quot;</span>, tails_outcome, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tails outcome (40% loss): $600</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability of heads: &quot;</span>, probability_heads, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability of heads: 0.5</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability of tails: &quot;</span>, <span class="dv">1</span> <span class="sc">-</span> probability_heads, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability of tails: 0.5</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Expected Value = P(Heads) × Heads_Outcome + P(Tails) × Tails_Outcome</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Expected Value = P(Heads) × Heads_Outcome + P(Tails) × Tails_Outcome</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Value = &quot;</span>, probability_heads, <span class="st">&quot; × $&quot;</span>, heads_outcome, <span class="st">&quot; + &quot;</span>, <span class="dv">1</span> <span class="sc">-</span> probability_heads, <span class="st">&quot; × $&quot;</span>, tails_outcome, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expected Value = 0.5 × $1500 + 0.5 × $600</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Value = $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expected Value = $1050</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Answer: The expected value after 1 coin flip is $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Answer: The expected value after 1 coin flip is $1050</code></pre>
@@ -408,8 +179,6 @@ Answer: The expected value after 1 coin flip is $1050</code></pre>
 <li><strong>Expectation vs. Reality:</strong> Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000?</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the same parameters from Question 1</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>expected_value <span class="ot">&lt;-</span> <span class="dv">1050</span>  <span class="co"># From previous calculation</span></span>
@@ -420,51 +189,30 @@ Answer: The expected value after 1 coin flip is $1050</code></pre>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis</span></span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expectation vs. Reality Analysis:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expectation vs. Reality Analysis:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;===============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>===============================</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance: $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Initial balance: $1000</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected value after 1 flip: $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expected value after 1 flip: $1050</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected difference: $&quot;</span>, expected_difference, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expected difference: $50</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected return: &quot;</span>, expected_return_percent, <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Expected return: 5%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine if positive or negative</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (expected_difference <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ The expected value is POSITIVE</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
@@ -478,31 +226,21 @@ Answer: The expected value after 1 coin flip is $1050</code></pre>
 <span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;= The expected value is ZERO</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;= You expect your account to be worth the SAME as $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>✓ The expected value is POSITIVE
 ✓ You expect your account to be worth MORE than $1,000
 ✓ Expected gain: $50 (5%)</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Key Insight:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Key Insight:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The positive expected value suggests this game is theoretically favorable.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The positive expected value suggests this game is theoretically favorable.</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;However, this is just the average outcome - your actual result could be very different!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>However, this is just the average outcome - your actual result could be very different!</code></pre>
 </div>
@@ -513,8 +251,6 @@ Key Insight:</code></pre>
 <li><strong>Single Simulation:</strong> Run one simulation showing account balance over time. Create a plot and comment on the results.</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -560,61 +296,37 @@ Key Insight:</code></pre>
 <span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Display key results</span></span>
 <span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Single Simulation Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Single Simulation Results:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;========================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>========================</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance (age 20): $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Initial balance (age 20): $1000</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Final balance (age 55): $&quot;</span>, <span class="fu">round</span>(simulation_result[<span class="fu">length</span>(simulation_result)], <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Final balance (age 55): $24429.47</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total return: $&quot;</span>, <span class="fu">round</span>(simulation_result[<span class="fu">length</span>(simulation_result)] <span class="sc">-</span> initial_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total return: $23429.47</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total return %: &quot;</span>, <span class="fu">round</span>(((simulation_result[<span class="fu">length</span>(simulation_result)] <span class="sc">/</span> initial_balance) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total return %: 2342.95%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Maximum balance reached: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(simulation_result), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum balance reached: $40715.78</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Minimum balance reached: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(simulation_result), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Minimum balance reached: $540</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -638,27 +350,20 @@ Key Insight:</code></pre>
 <span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
 <span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">55</span>, <span class="dv">5</span>))</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img src="index_files/figure-html/single-simulation-1.png" class="img-fluid" width="3000" /></p>
+<p><img src="index_files/figure-html/single-simulation-1.png" class="img-fluid" width="672" /></p>
 </figure>
 </div>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show first few and last few years</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">First 10 years:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 First 10 years:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(simulation_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>, <span class="fu">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;balance&quot;</span>)])</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   age  balance
 1   20 1000.000
@@ -673,18 +378,12 @@ First 10 years:</code></pre>
 10  29 2460.375
 11  30 1476.225</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Last 10 years:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Last 10 years:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(simulation_data[(<span class="fu">nrow</span>(simulation_data)<span class="sc">-</span><span class="dv">9</span>)<span class="sc">:</span><span class="fu">nrow</span>(simulation_data), <span class="fu">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;balance&quot;</span>)])</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   age   balance
 27  46  9929.163
@@ -699,17 +398,15 @@ Last 10 years:</code></pre>
 36  55 24429.465</code></pre>
 </div>
 </div>
-<p><strong>Comments on the Results:</strong> {.results}</p>
+<p><strong>Comments on the Results:</strong></p>
 <p>The results of the simulation were extremely positive! At age 55 I ended with around $25,000 in my account. However, my account experienced a signficant drop during my last coin flip which resulted in my losing $15,000. While this last flip was painful, I’m still very happy overall with the results!</p>
 </section>
-<section id="grade-1" class="level3 alert alert-warning" data-number="1.2.2">
-<h3 class="alert alert-warning" data-number="1.2.2"><span class="header-section-number">1.2.2</span> 85% Grade</h3>
+<section id="grade-1" class="level3">
+<h3>85% Grade</h3>
 <ol start="4" type="1">
 <li><strong>Multiple Simulations:</strong> Run 100 simulations. Create a probability distribution plot of final balances at age 55.</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -736,12 +433,9 @@ Last 10 years:</code></pre>
 <span id="cb69-24"><a href="#cb69-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb69-25"><a href="#cb69-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Run 100 simulations</span></span>
 <span id="cb69-26"><a href="#cb69-26" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Running 100 simulations...</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Running 100 simulations...</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>final_balances <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, </span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_investment_game</span>(initial_balance, n_years, heads_multiplier, tails_multiplier))</span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -762,69 +456,42 @@ Last 10 years:</code></pre>
 <span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Display summary statistics</span></span>
 <span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">100 Simulations Summary:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 100 Simulations Summary:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb73"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;========================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>========================</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Mean final balance: $&quot;</span>, <span class="fu">round</span>(mean_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean final balance: $3001.49</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Median final balance: $&quot;</span>, <span class="fu">round</span>(median_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Median final balance: $100.06</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Standard deviation: $&quot;</span>, <span class="fu">round</span>(sd_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Standard deviation: $9520.97</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Minimum balance: $&quot;</span>, <span class="fu">round</span>(min_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Minimum balance: $0.41</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Maximum balance: $&quot;</span>, <span class="fu">round</span>(max_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum balance: $61073.66</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability above $1,000: &quot;</span>, <span class="fu">round</span>(prob_above_initial <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability above $1,000: 26%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability above $10,000: &quot;</span>, <span class="fu">round</span>(prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability above $10,000: 5%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create probability distribution plot</span></span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -851,72 +518,47 @@ Last 10 years:</code></pre>
 <span id="cb89-24"><a href="#cb89-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb89-25"><a href="#cb89-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
 <span id="cb89-26"><a href="#cb89-26" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img src="index_files/figure-html/multiple-simulations-1.png" class="img-fluid" width="3000" /></p>
+<p><img src="index_files/figure-html/multiple-simulations-1.png" class="img-fluid" width="672" /></p>
 </figure>
 </div>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot to the project folder</span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;originally.png&quot;</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
 <span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Plot saved as &#39;originally.png&#39; in the project folder</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Plot saved as &#39;originally.png&#39; in the project folder</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show distribution of results</span></span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Distribution of Final Balances:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Distribution of Final Balances:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;==============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>==============================</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$0 - $100: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&lt;</span> <span class="dv">100</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$0 - $100: 38 simulations</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$100 - $1,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> final_balances <span class="sc">&lt;</span> <span class="dv">1000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$100 - $1,000: 36 simulations</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$1,000 - $10,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> final_balances <span class="sc">&lt;</span> <span class="dv">10000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$1,000 - $10,000: 21 simulations</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$10,000 - $100,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">10000</span> <span class="sc">&amp;</span> final_balances <span class="sc">&lt;</span> <span class="dv">100000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$10,000 - $100,000: 5 simulations</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$100,000+: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">100000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$100,000+: 0 simulations</code></pre>
 </div>
@@ -928,14 +570,12 @@ Distribution of Final Balances:</code></pre>
 </figure>
 </div>
 </section>
-<section id="grade-2" class="level3 alert alert-success" data-number="1.2.3">
-<h3 class="alert alert-success" data-number="1.2.3"><span class="header-section-number">1.2.3</span> 95% Grade</h3>
+<section id="grade-2" class="level3">
+<h3>95% Grade</h3>
 <ol start="5" type="1">
 <li><strong>Probability Analysis:</strong> What is the probability that your balance will be greater than $1,000 at age 55?</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb106"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the same simulation results from Question 4</span></span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (This assumes the 100 simulations were already run)</span></span>
 <span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
@@ -981,178 +621,99 @@ Distribution of Final Balances:</code></pre>
 <span id="cb106-43"><a href="#cb106-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-44"><a href="#cb106-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
 <span id="cb106-45"><a href="#cb106-45" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability Analysis Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability Analysis Results:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>============================</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Based on 100 simulations:</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Based on 100 simulations:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability that balance &gt; $1,000 at age 55:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability that balance &gt; $1,000 at age 55:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Point estimate: &quot;</span>, <span class="fu">round</span>(prob_above_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Point estimate: 26%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb116"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  95% Confidence Interval: [&quot;</span>, <span class="fu">round</span>(ci_lower <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%, &quot;</span>, <span class="fu">round</span>(ci_upper <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%]</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  95% Confidence Interval: [17.4%, 34.6%]</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Number of simulations above $1,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>), <span class="st">&quot; out of &quot;</span>, n_sims, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Number of simulations above $1,000: 26 out of 100</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Additional Probability Thresholds:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Additional Probability Thresholds:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $10,000: &quot;</span>, <span class="fu">round</span>(prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Probability &gt; $10,000: 5%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $100,000: &quot;</span>, <span class="fu">round</span>(prob_above_100000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Probability &gt; $100,000: 0%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Interpretation:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (prob_above_1000 <span class="sc">&gt;</span> <span class="fl">0.5</span>) {</span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;  ✓ More likely than not to end up above $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;  ✗ More likely to end up at or below $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
 <span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  ✗ More likely to end up at or below $1,000</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Risk Assessment:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Risk Assessment:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability of losing money: &quot;</span>, <span class="fu">round</span>(prob_below_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Probability of losing money: 74%</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Expected final balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">mean</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Expected final balance: $3001.49</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Median final balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Median final balance: $100.06</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show distribution summary</span></span>
 <span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Distribution Summary:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Distribution Summary:</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Minimum: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Minimum: $0.41</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Maximum: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Maximum: $61073.66</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Standard deviation: $&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Standard deviation: $9520.97</code></pre>
 </div>
 </div>
-<p><strong>Answer:</strong> 26% chance of having greater than $1,000 at age 55. {.results}</p>
-<hr />
+<p><strong>Answer:</strong> 26% chance of having greater than $1,000 at age 55.</p>
 </section>
-</section>
-<section id="conclusion" class="level2" data-number="1.3">
-<h2 data-number="1.3"><span class="header-section-number">1.3</span> Conclusion</h2>
-<p>This simulation challenge demonstrates several important concepts in financial modeling and risk analysis:</p>
-<ul>
-<li><strong>Expected Value vs. Probability</strong>: Even with positive expected returns, the probability of success can be low due to high volatility</li>
-<li><strong>Risk Management</strong>: The multiplicative nature of gains and losses creates extreme outcomes</li>
-<li><strong>Monte Carlo Simulation</strong>: A powerful tool for understanding complex probabilistic systems</li>
-<li><strong>Investment Strategy</strong>: High-risk strategies may have favorable expected values but poor probability of success</li>
-</ul>
-<p>The analysis shows that while the investment game has a positive expected value, the high volatility makes it a risky strategy for most investors.</p>
-<hr />
-<div class="footer">
-<p>
-<strong>Investment Simulation Challenge</strong> | Monte Carlo Analysis
-</p>
-<p>
-Generated with Quarto • R • Statistical Modeling
-</p>
-</div>
-<section id="grade-3" class="level3 alert alert-danger" data-number="1.3.1">
-<h3 class="alert alert-danger" data-number="1.3.1"><span class="header-section-number">1.3.1</span> 100% Grade</h3>
+<section id="grade-3" class="level3">
+<h3>100% Grade</h3>
 <ol start="6" type="1">
 <li><strong>Strategy Comparison:</strong> Run 100 simulations for the modified strategy. What is the probability of having more than $10,000 at age 55? Compare with the original game.</li>
 </ol>
@@ -1222,7 +783,7 @@ MODIFIED STRATEGY (50% of balance at risk):</code></pre>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img src="index_files/figure-html/strategy-comparison-1.png" class="img-fluid" width="3000" /></p>
+<p><img src="index_files/figure-html/strategy-comparison-1.png" class="img-fluid" width="672" /></p>
 </figure>
 </div>
 </div>
@@ -1272,641 +833,10 @@ CONCLUSION:</code></pre>
 <pre><code>✗ Modified strategy has LOWER probability of staying above $1,000</code></pre>
 </div>
 </div>
-<p><strong>Comments on the Results:</strong> {.results}</p>
+<p><strong>Comments on the Results:</strong></p>
 <p>The strategy comparison reveals fascinating insights about risk management in investment strategies. The modified strategy, which only risks 50% of the current balance on each flip, shows significantly different characteristics compared to the original strategy that risks 100% of the balance.</p>
 <p>The modified strategy demonstrates lower volatility and more conservative outcomes, with a higher probability of maintaining wealth above the initial $1,000 threshold. However, this comes at the cost of lower expected returns and reduced probability of achieving the high-reward outcomes that make the original strategy potentially lucrative.</p>
 <p>This analysis highlights a fundamental trade-off in investment strategy design: <strong>risk reduction comes at the cost of potential upside</strong>. The modified strategy provides more consistent, predictable outcomes but sacrifices the possibility of extreme gains that characterize the original high-risk approach. This comparison is particularly valuable for understanding how different risk management approaches can fundamentally alter the probability distribution of investment outcomes.</p>
-<!-- -->
-<div class="quarto-embedded-source-code">
-<div class="sourceCode" id="cb180" data-shortcodes="false"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Investment Simulation Challenge&quot;</span></span>
-<span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> &quot;Monte Carlo Analysis of High-Risk Investment Strategy&quot;</span></span>
-<span id="cb180-4"><a href="#cb180-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Your Name&quot;</span></span>
-<span id="cb180-5"><a href="#cb180-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb180-6"><a href="#cb180-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb180-7"><a href="#cb180-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb180-8"><a href="#cb180-8" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo</span></span>
-<span id="cb180-9"><a href="#cb180-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb180-10"><a href="#cb180-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb180-11"><a href="#cb180-11" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb180-12"><a href="#cb180-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb180-13"><a href="#cb180-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb180-14"><a href="#cb180-14" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb180-15"><a href="#cb180-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 10</span></span>
-<span id="cb180-16"><a href="#cb180-16" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 6</span></span>
-<span id="cb180-17"><a href="#cb180-17" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-dpi: 300</span></span>
-<span id="cb180-18"><a href="#cb180-18" aria-hidden="true" tabindex="-1"></a><span class="co">    css: styles.css</span></span>
-<span id="cb180-19"><a href="#cb180-19" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb180-20"><a href="#cb180-20" aria-hidden="true" tabindex="-1"></a><span class="co">    include-in-header:</span></span>
-<span id="cb180-21"><a href="#cb180-21" aria-hidden="true" tabindex="-1"></a><span class="co">      - custom-header.html</span></span>
-<span id="cb180-22"><a href="#cb180-22" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
-<span id="cb180-23"><a href="#cb180-23" aria-hidden="true" tabindex="-1"></a><span class="co">    documentclass: scrartcl</span></span>
-<span id="cb180-24"><a href="#cb180-24" aria-hidden="true" tabindex="-1"></a><span class="co">    classoption: [DIV=11, numbers=noendperiod]</span></span>
-<span id="cb180-25"><a href="#cb180-25" aria-hidden="true" tabindex="-1"></a><span class="co">    papersize: letter</span></span>
-<span id="cb180-26"><a href="#cb180-26" aria-hidden="true" tabindex="-1"></a><span class="co">    header-includes:</span></span>
-<span id="cb180-27"><a href="#cb180-27" aria-hidden="true" tabindex="-1"></a><span class="co">      - \KOMAoption{captions}{tableheading}</span></span>
-<span id="cb180-28"><a href="#cb180-28" aria-hidden="true" tabindex="-1"></a><span class="co">    block-headings: true</span></span>
-<span id="cb180-29"><a href="#cb180-29" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb180-30"><a href="#cb180-30" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
-<span id="cb180-31"><a href="#cb180-31" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
-<span id="cb180-32"><a href="#cb180-32" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb180-33"><a href="#cb180-33" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb180-34"><a href="#cb180-34" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb180-35"><a href="#cb180-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-36"><a href="#cb180-36" aria-hidden="true" tabindex="-1"></a><span class="fu"># Investment Simulation Challenge</span></span>
-<span id="cb180-37"><a href="#cb180-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-38"><a href="#cb180-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Investment Game</span></span>
-<span id="cb180-39"><a href="#cb180-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-40"><a href="#cb180-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Original Game Strategy</span></span>
-<span id="cb180-41"><a href="#cb180-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-42"><a href="#cb180-42" aria-hidden="true" tabindex="-1"></a>You are given $1,000 to play this game: Flip a coin each year until age 55. If heads, increase your balance by 50%. If tails, reduce your balance by 40%.</span>
-<span id="cb180-43"><a href="#cb180-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-44"><a href="#cb180-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modified Game Strategy</span></span>
-<span id="cb180-45"><a href="#cb180-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-46"><a href="#cb180-46" aria-hidden="true" tabindex="-1"></a>Same as above, but you must bet exactly 50% of your current balance on each flip.</span>
-<span id="cb180-47"><a href="#cb180-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-48"><a href="#cb180-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions to Answer</span></span>
-<span id="cb180-49"><a href="#cb180-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-50"><a href="#cb180-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### 75% Grade {.alert .alert-info}</span></span>
-<span id="cb180-51"><a href="#cb180-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-52"><a href="#cb180-52" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Expected Value Analysis:** What is the expected value after 1 coin flip for the original game?</span>
-<span id="cb180-53"><a href="#cb180-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-54"><a href="#cb180-54" aria-hidden="true" tabindex="-1"></a>quarto-executable-code-5450563D</span>
-<span id="cb180-55"><a href="#cb180-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-56"><a href="#cb180-56" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb180-57"><a href="#cb180-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: expected-value</span></span>
-<span id="cb180-58"><a href="#cb180-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb180-59"><a href="#cb180-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-60"><a href="#cb180-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for the original game</span></span>
-<span id="cb180-61"><a href="#cb180-61" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb180-62"><a href="#cb180-62" aria-hidden="true" tabindex="-1"></a>heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span>  <span class="co"># +50% gain</span></span>
-<span id="cb180-63"><a href="#cb180-63" aria-hidden="true" tabindex="-1"></a>tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.6</span>  <span class="co"># -40% loss</span></span>
-<span id="cb180-64"><a href="#cb180-64" aria-hidden="true" tabindex="-1"></a>probability_heads <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb180-65"><a href="#cb180-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-66"><a href="#cb180-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate possible outcomes after 1 coin flip</span></span>
-<span id="cb180-67"><a href="#cb180-67" aria-hidden="true" tabindex="-1"></a>heads_outcome <span class="ot">&lt;-</span> initial_balance <span class="sc">*</span> heads_multiplier</span>
-<span id="cb180-68"><a href="#cb180-68" aria-hidden="true" tabindex="-1"></a>tails_outcome <span class="ot">&lt;-</span> initial_balance <span class="sc">*</span> tails_multiplier</span>
-<span id="cb180-69"><a href="#cb180-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-70"><a href="#cb180-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate expected value</span></span>
-<span id="cb180-71"><a href="#cb180-71" aria-hidden="true" tabindex="-1"></a>expected_value <span class="ot">&lt;-</span> probability_heads <span class="sc">*</span> heads_outcome <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> probability_heads) <span class="sc">*</span> tails_outcome</span>
-<span id="cb180-72"><a href="#cb180-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-73"><a href="#cb180-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb180-74"><a href="#cb180-74" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Value Analysis (1 coin flip):</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-75"><a href="#cb180-75" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;=====================================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-76"><a href="#cb180-76" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance: $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-77"><a href="#cb180-77" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Heads outcome (50% gain): $&quot;</span>, heads_outcome, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-78"><a href="#cb180-78" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Tails outcome (40% loss): $&quot;</span>, tails_outcome, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-79"><a href="#cb180-79" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability of heads: &quot;</span>, probability_heads, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-80"><a href="#cb180-80" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability of tails: &quot;</span>, <span class="dv">1</span> <span class="sc">-</span> probability_heads, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-81"><a href="#cb180-81" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Expected Value = P(Heads) × Heads_Outcome + P(Tails) × Tails_Outcome</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-82"><a href="#cb180-82" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Value = &quot;</span>, probability_heads, <span class="st">&quot; × $&quot;</span>, heads_outcome, <span class="st">&quot; + &quot;</span>, <span class="dv">1</span> <span class="sc">-</span> probability_heads, <span class="st">&quot; × $&quot;</span>, tails_outcome, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-83"><a href="#cb180-83" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected Value = $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-84"><a href="#cb180-84" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Answer: The expected value after 1 coin flip is $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-85"><a href="#cb180-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb180-86"><a href="#cb180-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-87"><a href="#cb180-87" aria-hidden="true" tabindex="-1"></a>**Discussion of Results:**</span>
-<span id="cb180-88"><a href="#cb180-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-89"><a href="#cb180-89" aria-hidden="true" tabindex="-1"></a>The expected value analysis reveals a counterintuitive but mathematically sound result: despite the asymmetric nature of the game (50% gain vs. 40% loss), the expected value is positive at $1,050. This represents a 5% expected return per coin flip, which seems favorable at first glance. However, this analysis only considers the average outcome over many trials. In reality, the multiplicative nature of the game creates significant volatility - a single bad streak of tails could dramatically reduce your balance, while a streak of heads could lead to substantial gains. The expected value calculation assumes we can play this game many times, but in practice, you only get one sequence of coin flips until age 55. This highlights the important distinction between expected value (what happens on average) and actual outcomes (what happens in your specific case), which is a key concept in understanding why this seemingly profitable game might not be as attractive as it initially appears.</span>
-<span id="cb180-90"><a href="#cb180-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-91"><a href="#cb180-91" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Expectation vs. Reality:** Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000?</span>
-<span id="cb180-92"><a href="#cb180-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-93"><a href="#cb180-93" aria-hidden="true" tabindex="-1"></a>quarto-executable-code-5450563D</span>
-<span id="cb180-94"><a href="#cb180-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-95"><a href="#cb180-95" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb180-96"><a href="#cb180-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: expectation-reality</span></span>
-<span id="cb180-97"><a href="#cb180-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb180-98"><a href="#cb180-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-99"><a href="#cb180-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the same parameters from Question 1</span></span>
-<span id="cb180-100"><a href="#cb180-100" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb180-101"><a href="#cb180-101" aria-hidden="true" tabindex="-1"></a>expected_value <span class="ot">&lt;-</span> <span class="dv">1050</span>  <span class="co"># From previous calculation</span></span>
-<span id="cb180-102"><a href="#cb180-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-103"><a href="#cb180-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the difference from initial balance</span></span>
-<span id="cb180-104"><a href="#cb180-104" aria-hidden="true" tabindex="-1"></a>expected_difference <span class="ot">&lt;-</span> expected_value <span class="sc">-</span> initial_balance</span>
-<span id="cb180-105"><a href="#cb180-105" aria-hidden="true" tabindex="-1"></a>expected_return_percent <span class="ot">&lt;-</span> (expected_difference <span class="sc">/</span> initial_balance) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb180-106"><a href="#cb180-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-107"><a href="#cb180-107" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis</span></span>
-<span id="cb180-108"><a href="#cb180-108" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expectation vs. Reality Analysis:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-109"><a href="#cb180-109" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;===============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-110"><a href="#cb180-110" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance: $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-111"><a href="#cb180-111" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected value after 1 flip: $&quot;</span>, expected_value, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-112"><a href="#cb180-112" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected difference: $&quot;</span>, expected_difference, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-113"><a href="#cb180-113" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Expected return: &quot;</span>, expected_return_percent, <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-114"><a href="#cb180-114" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-115"><a href="#cb180-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-116"><a href="#cb180-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine if positive or negative</span></span>
-<span id="cb180-117"><a href="#cb180-117" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (expected_difference <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb180-118"><a href="#cb180-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ The expected value is POSITIVE</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-119"><a href="#cb180-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ You expect your account to be worth MORE than $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-120"><a href="#cb180-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ Expected gain: $&quot;</span>, expected_difference, <span class="st">&quot; (&quot;</span>, expected_return_percent, <span class="st">&quot;%)</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-121"><a href="#cb180-121" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (expected_difference <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb180-122"><a href="#cb180-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ The expected value is NEGATIVE</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-123"><a href="#cb180-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ You expect your account to be worth LESS than $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-124"><a href="#cb180-124" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ Expected loss: $&quot;</span>, <span class="fu">abs</span>(expected_difference), <span class="st">&quot; (&quot;</span>, <span class="fu">abs</span>(expected_return_percent), <span class="st">&quot;%)</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-125"><a href="#cb180-125" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb180-126"><a href="#cb180-126" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;= The expected value is ZERO</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-127"><a href="#cb180-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;= You expect your account to be worth the SAME as $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-128"><a href="#cb180-128" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-129"><a href="#cb180-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-130"><a href="#cb180-130" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Key Insight:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-131"><a href="#cb180-131" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The positive expected value suggests this game is theoretically favorable.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-132"><a href="#cb180-132" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;However, this is just the average outcome - your actual result could be very different!</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-133"><a href="#cb180-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb180-134"><a href="#cb180-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-135"><a href="#cb180-135" aria-hidden="true" tabindex="-1"></a>**Discussion of Results:**</span>
-<span id="cb180-136"><a href="#cb180-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-137"><a href="#cb180-137" aria-hidden="true" tabindex="-1"></a>The expectation vs. reality analysis confirms that the game appears mathematically favorable with a positive expected value of $1,050, representing a 5% expected return per coin flip. This suggests that, on average, players should expect to gain money. However, this analysis reveals a critical gap between theoretical expectations and practical outcomes. The positive expected value is based on the assumption that you can play this game many times, allowing the law of large numbers to work in your favor. In reality, you only get one sequence of coin flips from your current age until 55, which means you&#39;re subject to the full volatility of the game without the benefit of averaging. This creates a paradox: while the game is theoretically profitable, the high variance means you could easily end up with significantly less than your initial $1,000 investment. The 5% expected return per flip sounds attractive, but it doesn&#39;t account for the risk of ruin or the psychological impact of potentially large losses. This highlights why expected value alone is insufficient for decision-making in high-variance scenarios - you need to consider the entire distribution of possible outcomes, not just the average.</span>
-<span id="cb180-138"><a href="#cb180-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-139"><a href="#cb180-139" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Single Simulation:** Run one simulation showing account balance over time. Create a plot and comment on the results.</span>
-<span id="cb180-140"><a href="#cb180-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-141"><a href="#cb180-141" aria-hidden="true" tabindex="-1"></a>quarto-executable-code-5450563D</span>
-<span id="cb180-142"><a href="#cb180-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-143"><a href="#cb180-143" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb180-144"><a href="#cb180-144" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: single-simulation</span></span>
-<span id="cb180-145"><a href="#cb180-145" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb180-146"><a href="#cb180-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-147"><a href="#cb180-147" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
-<span id="cb180-148"><a href="#cb180-148" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb180-149"><a href="#cb180-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-150"><a href="#cb180-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb180-151"><a href="#cb180-151" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb180-152"><a href="#cb180-152" aria-hidden="true" tabindex="-1"></a>heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span>  <span class="co"># +50% gain</span></span>
-<span id="cb180-153"><a href="#cb180-153" aria-hidden="true" tabindex="-1"></a>tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.6</span>  <span class="co"># -40% loss</span></span>
-<span id="cb180-154"><a href="#cb180-154" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">35</span>  <span class="co"># Assuming you start at age 20, play until 55</span></span>
-<span id="cb180-155"><a href="#cb180-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-156"><a href="#cb180-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate one complete game</span></span>
-<span id="cb180-157"><a href="#cb180-157" aria-hidden="true" tabindex="-1"></a>simulate_investment_game <span class="ot">&lt;-</span> <span class="cf">function</span>(initial, years, heads_mult, tails_mult) {</span>
-<span id="cb180-158"><a href="#cb180-158" aria-hidden="true" tabindex="-1"></a>  balance <span class="ot">&lt;-</span> initial</span>
-<span id="cb180-159"><a href="#cb180-159" aria-hidden="true" tabindex="-1"></a>  balance_history <span class="ot">&lt;-</span> <span class="fu">numeric</span>(years <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb180-160"><a href="#cb180-160" aria-hidden="true" tabindex="-1"></a>  balance_history[<span class="dv">1</span>] <span class="ot">&lt;-</span> initial</span>
-<span id="cb180-161"><a href="#cb180-161" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb180-162"><a href="#cb180-162" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>years) {</span>
-<span id="cb180-163"><a href="#cb180-163" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Flip coin (1 = heads, 0 = tails)</span></span>
-<span id="cb180-164"><a href="#cb180-164" aria-hidden="true" tabindex="-1"></a>    coin_flip <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb180-165"><a href="#cb180-165" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb180-166"><a href="#cb180-166" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (coin_flip <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb180-167"><a href="#cb180-167" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Heads: gain 50%</span></span>
-<span id="cb180-168"><a href="#cb180-168" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> heads_mult</span>
-<span id="cb180-169"><a href="#cb180-169" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb180-170"><a href="#cb180-170" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Tails: lose 40%</span></span>
-<span id="cb180-171"><a href="#cb180-171" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> tails_mult</span>
-<span id="cb180-172"><a href="#cb180-172" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb180-173"><a href="#cb180-173" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb180-174"><a href="#cb180-174" aria-hidden="true" tabindex="-1"></a>    balance_history[year <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> balance</span>
-<span id="cb180-175"><a href="#cb180-175" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb180-176"><a href="#cb180-176" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb180-177"><a href="#cb180-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(balance_history)</span>
-<span id="cb180-178"><a href="#cb180-178" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-179"><a href="#cb180-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-180"><a href="#cb180-180" aria-hidden="true" tabindex="-1"></a><span class="co"># Run single simulation</span></span>
-<span id="cb180-181"><a href="#cb180-181" aria-hidden="true" tabindex="-1"></a>simulation_result <span class="ot">&lt;-</span> <span class="fu">simulate_investment_game</span>(initial_balance, n_years, heads_multiplier, tails_multiplier)</span>
-<span id="cb180-182"><a href="#cb180-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-183"><a href="#cb180-183" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame for plotting</span></span>
-<span id="cb180-184"><a href="#cb180-184" aria-hidden="true" tabindex="-1"></a>simulation_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb180-185"><a href="#cb180-185" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">0</span><span class="sc">:</span>n_years,</span>
-<span id="cb180-186"><a href="#cb180-186" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="dv">20</span><span class="sc">:</span>(<span class="dv">20</span> <span class="sc">+</span> n_years),</span>
-<span id="cb180-187"><a href="#cb180-187" aria-hidden="true" tabindex="-1"></a>  <span class="at">balance =</span> simulation_result</span>
-<span id="cb180-188"><a href="#cb180-188" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb180-189"><a href="#cb180-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-190"><a href="#cb180-190" aria-hidden="true" tabindex="-1"></a><span class="co"># Display key results</span></span>
-<span id="cb180-191"><a href="#cb180-191" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Single Simulation Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-192"><a href="#cb180-192" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;========================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-193"><a href="#cb180-193" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Initial balance (age 20): $&quot;</span>, initial_balance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-194"><a href="#cb180-194" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Final balance (age 55): $&quot;</span>, <span class="fu">round</span>(simulation_result[<span class="fu">length</span>(simulation_result)], <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-195"><a href="#cb180-195" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total return: $&quot;</span>, <span class="fu">round</span>(simulation_result[<span class="fu">length</span>(simulation_result)] <span class="sc">-</span> initial_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-196"><a href="#cb180-196" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total return %: &quot;</span>, <span class="fu">round</span>(((simulation_result[<span class="fu">length</span>(simulation_result)] <span class="sc">/</span> initial_balance) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-197"><a href="#cb180-197" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Maximum balance reached: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(simulation_result), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-198"><a href="#cb180-198" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Minimum balance reached: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(simulation_result), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-199"><a href="#cb180-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-200"><a href="#cb180-200" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb180-201"><a href="#cb180-201" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb180-202"><a href="#cb180-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-203"><a href="#cb180-203" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(simulation_data, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> balance)) <span class="sc">+</span></span>
-<span id="cb180-204"><a href="#cb180-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb180-205"><a href="#cb180-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
-<span id="cb180-206"><a href="#cb180-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> initial_balance, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb180-207"><a href="#cb180-207" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb180-208"><a href="#cb180-208" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Investment Game: Single Simulation Path&quot;</span>,</span>
-<span id="cb180-209"><a href="#cb180-209" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Account Balance from Age 20 to 55&quot;</span>,</span>
-<span id="cb180-210"><a href="#cb180-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Age&quot;</span>,</span>
-<span id="cb180-211"><a href="#cb180-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Account Balance ($)&quot;</span>,</span>
-<span id="cb180-212"><a href="#cb180-212" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Red dashed line shows initial investment of $1,000&quot;</span></span>
-<span id="cb180-213"><a href="#cb180-213" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb180-214"><a href="#cb180-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
-<span id="cb180-215"><a href="#cb180-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb180-216"><a href="#cb180-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb180-217"><a href="#cb180-217" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb180-218"><a href="#cb180-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">&quot;gray50&quot;</span>),</span>
-<span id="cb180-219"><a href="#cb180-219" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb180-220"><a href="#cb180-220" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
-<span id="cb180-221"><a href="#cb180-221" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb180-222"><a href="#cb180-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">55</span>, <span class="dv">5</span>))</span>
-<span id="cb180-223"><a href="#cb180-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-224"><a href="#cb180-224" aria-hidden="true" tabindex="-1"></a><span class="co"># Show first few and last few years</span></span>
-<span id="cb180-225"><a href="#cb180-225" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">First 10 years:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-226"><a href="#cb180-226" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(simulation_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>, <span class="fu">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;balance&quot;</span>)])</span>
-<span id="cb180-227"><a href="#cb180-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-228"><a href="#cb180-228" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Last 10 years:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-229"><a href="#cb180-229" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(simulation_data[(<span class="fu">nrow</span>(simulation_data)<span class="sc">-</span><span class="dv">9</span>)<span class="sc">:</span><span class="fu">nrow</span>(simulation_data), <span class="fu">c</span>(<span class="st">&quot;age&quot;</span>, <span class="st">&quot;balance&quot;</span>)])</span>
-<span id="cb180-230"><a href="#cb180-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb180-231"><a href="#cb180-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-232"><a href="#cb180-232" aria-hidden="true" tabindex="-1"></a>**Comments on the Results:** {.results}</span>
-<span id="cb180-233"><a href="#cb180-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-234"><a href="#cb180-234" aria-hidden="true" tabindex="-1"></a>The results of the simulation were extremely positive! At age 55 I ended with around $25,000 in my account. However, my account experienced a signficant drop during my last coin flip which resulted in my losing $15,000. While this last flip was painful, I&#39;m still very happy overall with the results!</span>
-<span id="cb180-235"><a href="#cb180-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-236"><a href="#cb180-236" aria-hidden="true" tabindex="-1"></a><span class="fu">### 85% Grade {.alert .alert-warning}</span></span>
-<span id="cb180-237"><a href="#cb180-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-238"><a href="#cb180-238" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Multiple Simulations:** Run 100 simulations. Create a probability distribution plot of final balances at age 55.</span>
-<span id="cb180-239"><a href="#cb180-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-240"><a href="#cb180-240" aria-hidden="true" tabindex="-1"></a>quarto-executable-code-5450563D</span>
-<span id="cb180-241"><a href="#cb180-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-242"><a href="#cb180-242" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb180-243"><a href="#cb180-243" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: multiple-simulations</span></span>
-<span id="cb180-244"><a href="#cb180-244" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb180-245"><a href="#cb180-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-246"><a href="#cb180-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
-<span id="cb180-247"><a href="#cb180-247" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb180-248"><a href="#cb180-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-249"><a href="#cb180-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb180-250"><a href="#cb180-250" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb180-251"><a href="#cb180-251" aria-hidden="true" tabindex="-1"></a>heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span>  <span class="co"># +50% gain</span></span>
-<span id="cb180-252"><a href="#cb180-252" aria-hidden="true" tabindex="-1"></a>tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.6</span>  <span class="co"># -40% loss</span></span>
-<span id="cb180-253"><a href="#cb180-253" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">35</span>  <span class="co"># Age 20 to 55</span></span>
-<span id="cb180-254"><a href="#cb180-254" aria-hidden="true" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb180-255"><a href="#cb180-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-256"><a href="#cb180-256" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate one complete game (same as Question 3)</span></span>
-<span id="cb180-257"><a href="#cb180-257" aria-hidden="true" tabindex="-1"></a>simulate_investment_game <span class="ot">&lt;-</span> <span class="cf">function</span>(initial, years, heads_mult, tails_mult) {</span>
-<span id="cb180-258"><a href="#cb180-258" aria-hidden="true" tabindex="-1"></a>  balance <span class="ot">&lt;-</span> initial</span>
-<span id="cb180-259"><a href="#cb180-259" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>years) {</span>
-<span id="cb180-260"><a href="#cb180-260" aria-hidden="true" tabindex="-1"></a>    coin_flip <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb180-261"><a href="#cb180-261" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (coin_flip <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb180-262"><a href="#cb180-262" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> heads_mult</span>
-<span id="cb180-263"><a href="#cb180-263" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb180-264"><a href="#cb180-264" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> tails_mult</span>
-<span id="cb180-265"><a href="#cb180-265" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb180-266"><a href="#cb180-266" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb180-267"><a href="#cb180-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(balance)</span>
-<span id="cb180-268"><a href="#cb180-268" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-269"><a href="#cb180-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-270"><a href="#cb180-270" aria-hidden="true" tabindex="-1"></a><span class="co"># Run 100 simulations</span></span>
-<span id="cb180-271"><a href="#cb180-271" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Running 100 simulations...</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-272"><a href="#cb180-272" aria-hidden="true" tabindex="-1"></a>final_balances <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, </span>
-<span id="cb180-273"><a href="#cb180-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_investment_game</span>(initial_balance, n_years, heads_multiplier, tails_multiplier))</span>
-<span id="cb180-274"><a href="#cb180-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-275"><a href="#cb180-275" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame for analysis</span></span>
-<span id="cb180-276"><a href="#cb180-276" aria-hidden="true" tabindex="-1"></a>simulation_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb180-277"><a href="#cb180-277" aria-hidden="true" tabindex="-1"></a>  <span class="at">simulation =</span> <span class="dv">1</span><span class="sc">:</span>n_simulations,</span>
-<span id="cb180-278"><a href="#cb180-278" aria-hidden="true" tabindex="-1"></a>  <span class="at">final_balance =</span> final_balances</span>
-<span id="cb180-279"><a href="#cb180-279" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb180-280"><a href="#cb180-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-281"><a href="#cb180-281" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics</span></span>
-<span id="cb180-282"><a href="#cb180-282" aria-hidden="true" tabindex="-1"></a>mean_balance <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances)</span>
-<span id="cb180-283"><a href="#cb180-283" aria-hidden="true" tabindex="-1"></a>median_balance <span class="ot">&lt;-</span> <span class="fu">median</span>(final_balances)</span>
-<span id="cb180-284"><a href="#cb180-284" aria-hidden="true" tabindex="-1"></a>sd_balance <span class="ot">&lt;-</span> <span class="fu">sd</span>(final_balances)</span>
-<span id="cb180-285"><a href="#cb180-285" aria-hidden="true" tabindex="-1"></a>min_balance <span class="ot">&lt;-</span> <span class="fu">min</span>(final_balances)</span>
-<span id="cb180-286"><a href="#cb180-286" aria-hidden="true" tabindex="-1"></a>max_balance <span class="ot">&lt;-</span> <span class="fu">max</span>(final_balances)</span>
-<span id="cb180-287"><a href="#cb180-287" aria-hidden="true" tabindex="-1"></a>prob_above_initial <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> initial_balance)</span>
-<span id="cb180-288"><a href="#cb180-288" aria-hidden="true" tabindex="-1"></a>prob_above_10000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">10000</span>)</span>
-<span id="cb180-289"><a href="#cb180-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-290"><a href="#cb180-290" aria-hidden="true" tabindex="-1"></a><span class="co"># Display summary statistics</span></span>
-<span id="cb180-291"><a href="#cb180-291" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">100 Simulations Summary:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-292"><a href="#cb180-292" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;========================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-293"><a href="#cb180-293" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Mean final balance: $&quot;</span>, <span class="fu">round</span>(mean_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-294"><a href="#cb180-294" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Median final balance: $&quot;</span>, <span class="fu">round</span>(median_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-295"><a href="#cb180-295" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Standard deviation: $&quot;</span>, <span class="fu">round</span>(sd_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-296"><a href="#cb180-296" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Minimum balance: $&quot;</span>, <span class="fu">round</span>(min_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-297"><a href="#cb180-297" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Maximum balance: $&quot;</span>, <span class="fu">round</span>(max_balance, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-298"><a href="#cb180-298" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability above $1,000: &quot;</span>, <span class="fu">round</span>(prob_above_initial <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-299"><a href="#cb180-299" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability above $10,000: &quot;</span>, <span class="fu">round</span>(prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-300"><a href="#cb180-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-301"><a href="#cb180-301" aria-hidden="true" tabindex="-1"></a><span class="co"># Create probability distribution plot</span></span>
-<span id="cb180-302"><a href="#cb180-302" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb180-303"><a href="#cb180-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-304"><a href="#cb180-304" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb180-305"><a href="#cb180-305" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(simulation_results, <span class="fu">aes</span>(<span class="at">x =</span> final_balance)) <span class="sc">+</span></span>
-<span id="cb180-306"><a href="#cb180-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb180-307"><a href="#cb180-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> initial_balance, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb180-308"><a href="#cb180-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean_balance, <span class="at">color =</span> <span class="st">&quot;green&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;solid&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb180-309"><a href="#cb180-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb180-310"><a href="#cb180-310" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Distribution of Final Account Balances&quot;</span>,</span>
-<span id="cb180-311"><a href="#cb180-311" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;100 Simulations: Age 20 to 55&quot;</span>,</span>
-<span id="cb180-312"><a href="#cb180-312" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Final Balance at Age 55 ($)&quot;</span>,</span>
-<span id="cb180-313"><a href="#cb180-313" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
-<span id="cb180-314"><a href="#cb180-314" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Red dashed line = Initial $1,000 | Green line = Mean&quot;</span></span>
-<span id="cb180-315"><a href="#cb180-315" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb180-316"><a href="#cb180-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
-<span id="cb180-317"><a href="#cb180-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb180-318"><a href="#cb180-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb180-319"><a href="#cb180-319" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb180-320"><a href="#cb180-320" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">&quot;gray50&quot;</span>),</span>
-<span id="cb180-321"><a href="#cb180-321" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb180-322"><a href="#cb180-322" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>)</span>
-<span id="cb180-323"><a href="#cb180-323" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb180-324"><a href="#cb180-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-325"><a href="#cb180-325" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
-<span id="cb180-326"><a href="#cb180-326" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p)</span>
-<span id="cb180-327"><a href="#cb180-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-328"><a href="#cb180-328" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot to the project folder</span></span>
-<span id="cb180-329"><a href="#cb180-329" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;originally.png&quot;</span>, <span class="at">plot =</span> p, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb180-330"><a href="#cb180-330" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Plot saved as &#39;originally.png&#39; in the project folder</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-331"><a href="#cb180-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-332"><a href="#cb180-332" aria-hidden="true" tabindex="-1"></a><span class="co"># Show distribution of results</span></span>
-<span id="cb180-333"><a href="#cb180-333" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Distribution of Final Balances:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-334"><a href="#cb180-334" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;==============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-335"><a href="#cb180-335" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$0 - $100: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&lt;</span> <span class="dv">100</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-336"><a href="#cb180-336" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$100 - $1,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> final_balances <span class="sc">&lt;</span> <span class="dv">1000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-337"><a href="#cb180-337" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$1,000 - $10,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> final_balances <span class="sc">&lt;</span> <span class="dv">10000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-338"><a href="#cb180-338" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$10,000 - $100,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">10000</span> <span class="sc">&amp;</span> final_balances <span class="sc">&lt;</span> <span class="dv">100000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-339"><a href="#cb180-339" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;$100,000+: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;=</span> <span class="dv">100000</span>), <span class="st">&quot; simulations</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-340"><a href="#cb180-340" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb180-341"><a href="#cb180-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-342"><a href="#cb180-342" aria-hidden="true" tabindex="-1"></a><span class="al">![Distribution of Final Balances - 100 Simulations](originally.png)</span></span>
-<span id="cb180-343"><a href="#cb180-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-344"><a href="#cb180-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### 95% Grade {.alert .alert-success}</span></span>
-<span id="cb180-345"><a href="#cb180-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-346"><a href="#cb180-346" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Probability Analysis:** What is the probability that your balance will be greater than $1,000 at age 55?</span>
-<span id="cb180-347"><a href="#cb180-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-348"><a href="#cb180-348" aria-hidden="true" tabindex="-1"></a>quarto-executable-code-5450563D</span>
-<span id="cb180-349"><a href="#cb180-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-350"><a href="#cb180-350" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb180-351"><a href="#cb180-351" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: probability-analysis</span></span>
-<span id="cb180-352"><a href="#cb180-352" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb180-353"><a href="#cb180-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-354"><a href="#cb180-354" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the same simulation results from Question 4</span></span>
-<span id="cb180-355"><a href="#cb180-355" aria-hidden="true" tabindex="-1"></a><span class="co"># (This assumes the 100 simulations were already run)</span></span>
-<span id="cb180-356"><a href="#cb180-356" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb180-357"><a href="#cb180-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-358"><a href="#cb180-358" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb180-359"><a href="#cb180-359" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb180-360"><a href="#cb180-360" aria-hidden="true" tabindex="-1"></a>heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb180-361"><a href="#cb180-361" aria-hidden="true" tabindex="-1"></a>tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
-<span id="cb180-362"><a href="#cb180-362" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">35</span></span>
-<span id="cb180-363"><a href="#cb180-363" aria-hidden="true" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb180-364"><a href="#cb180-364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-365"><a href="#cb180-365" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate one complete game</span></span>
-<span id="cb180-366"><a href="#cb180-366" aria-hidden="true" tabindex="-1"></a>simulate_investment_game <span class="ot">&lt;-</span> <span class="cf">function</span>(initial, years, heads_mult, tails_mult) {</span>
-<span id="cb180-367"><a href="#cb180-367" aria-hidden="true" tabindex="-1"></a>  balance <span class="ot">&lt;-</span> initial</span>
-<span id="cb180-368"><a href="#cb180-368" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>years) {</span>
-<span id="cb180-369"><a href="#cb180-369" aria-hidden="true" tabindex="-1"></a>    coin_flip <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb180-370"><a href="#cb180-370" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (coin_flip <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb180-371"><a href="#cb180-371" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> heads_mult</span>
-<span id="cb180-372"><a href="#cb180-372" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb180-373"><a href="#cb180-373" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> tails_mult</span>
-<span id="cb180-374"><a href="#cb180-374" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb180-375"><a href="#cb180-375" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb180-376"><a href="#cb180-376" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(balance)</span>
-<span id="cb180-377"><a href="#cb180-377" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-378"><a href="#cb180-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-379"><a href="#cb180-379" aria-hidden="true" tabindex="-1"></a><span class="co"># Run 100 simulations (same as Question 4)</span></span>
-<span id="cb180-380"><a href="#cb180-380" aria-hidden="true" tabindex="-1"></a>final_balances <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, </span>
-<span id="cb180-381"><a href="#cb180-381" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_investment_game</span>(initial_balance, n_years, heads_multiplier, tails_multiplier))</span>
-<span id="cb180-382"><a href="#cb180-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-383"><a href="#cb180-383" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate probability that balance &gt; $1,000</span></span>
-<span id="cb180-384"><a href="#cb180-384" aria-hidden="true" tabindex="-1"></a>prob_above_1000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>)</span>
-<span id="cb180-385"><a href="#cb180-385" aria-hidden="true" tabindex="-1"></a>prob_below_1000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&lt;=</span> <span class="dv">1000</span>)</span>
-<span id="cb180-386"><a href="#cb180-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-387"><a href="#cb180-387" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate additional probability thresholds</span></span>
-<span id="cb180-388"><a href="#cb180-388" aria-hidden="true" tabindex="-1"></a>prob_above_10000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">10000</span>)</span>
-<span id="cb180-389"><a href="#cb180-389" aria-hidden="true" tabindex="-1"></a>prob_above_100000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">100000</span>)</span>
-<span id="cb180-390"><a href="#cb180-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-391"><a href="#cb180-391" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate confidence interval for the probability</span></span>
-<span id="cb180-392"><a href="#cb180-392" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="fu">length</span>(final_balances)</span>
-<span id="cb180-393"><a href="#cb180-393" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(prob_above_1000 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> prob_above_1000) <span class="sc">/</span> n_sims)</span>
-<span id="cb180-394"><a href="#cb180-394" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="ot">&lt;-</span> prob_above_1000 <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
-<span id="cb180-395"><a href="#cb180-395" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="ot">&lt;-</span> prob_above_1000 <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
-<span id="cb180-396"><a href="#cb180-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-397"><a href="#cb180-397" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb180-398"><a href="#cb180-398" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability Analysis Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-399"><a href="#cb180-399" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-400"><a href="#cb180-400" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Based on 100 simulations:</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-401"><a href="#cb180-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-402"><a href="#cb180-402" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability that balance &gt; $1,000 at age 55:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-403"><a href="#cb180-403" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Point estimate: &quot;</span>, <span class="fu">round</span>(prob_above_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-404"><a href="#cb180-404" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  95% Confidence Interval: [&quot;</span>, <span class="fu">round</span>(ci_lower <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%, &quot;</span>, <span class="fu">round</span>(ci_upper <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%]</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-405"><a href="#cb180-405" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Number of simulations above $1,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>), <span class="st">&quot; out of &quot;</span>, n_sims, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-406"><a href="#cb180-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-407"><a href="#cb180-407" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Additional Probability Thresholds:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-408"><a href="#cb180-408" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $10,000: &quot;</span>, <span class="fu">round</span>(prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-409"><a href="#cb180-409" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $100,000: &quot;</span>, <span class="fu">round</span>(prob_above_100000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-410"><a href="#cb180-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-411"><a href="#cb180-411" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-412"><a href="#cb180-412" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (prob_above_1000 <span class="sc">&gt;</span> <span class="fl">0.5</span>) {</span>
-<span id="cb180-413"><a href="#cb180-413" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;  ✓ More likely than not to end up above $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-414"><a href="#cb180-414" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb180-415"><a href="#cb180-415" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;  ✗ More likely to end up at or below $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-416"><a href="#cb180-416" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-417"><a href="#cb180-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-418"><a href="#cb180-418" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Risk Assessment:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-419"><a href="#cb180-419" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability of losing money: &quot;</span>, <span class="fu">round</span>(prob_below_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-420"><a href="#cb180-420" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Expected final balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">mean</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-421"><a href="#cb180-421" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Median final balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-422"><a href="#cb180-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-423"><a href="#cb180-423" aria-hidden="true" tabindex="-1"></a><span class="co"># Show distribution summary</span></span>
-<span id="cb180-424"><a href="#cb180-424" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Distribution Summary:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-425"><a href="#cb180-425" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Minimum: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-426"><a href="#cb180-426" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Maximum: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-427"><a href="#cb180-427" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Standard deviation: $&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-428"><a href="#cb180-428" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb180-429"><a href="#cb180-429" aria-hidden="true" tabindex="-1"></a>**Answer:** 26% chance of having greater than $1,000 at age 55. {.results}</span>
-<span id="cb180-430"><a href="#cb180-430" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-431"><a href="#cb180-431" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb180-432"><a href="#cb180-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-433"><a href="#cb180-433" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
-<span id="cb180-434"><a href="#cb180-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-435"><a href="#cb180-435" aria-hidden="true" tabindex="-1"></a>This simulation challenge demonstrates several important concepts in financial modeling and risk analysis:</span>
-<span id="cb180-436"><a href="#cb180-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-437"><a href="#cb180-437" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Expected Value vs. Probability**: Even with positive expected returns, the probability of success can be low due to high volatility</span>
-<span id="cb180-438"><a href="#cb180-438" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Risk Management**: The multiplicative nature of gains and losses creates extreme outcomes</span>
-<span id="cb180-439"><a href="#cb180-439" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Monte Carlo Simulation**: A powerful tool for understanding complex probabilistic systems</span>
-<span id="cb180-440"><a href="#cb180-440" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Investment Strategy**: High-risk strategies may have favorable expected values but poor probability of success</span>
-<span id="cb180-441"><a href="#cb180-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-442"><a href="#cb180-442" aria-hidden="true" tabindex="-1"></a>The analysis shows that while the investment game has a positive expected value, the high volatility makes it a risky strategy for most investors.</span>
-<span id="cb180-443"><a href="#cb180-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-444"><a href="#cb180-444" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb180-445"><a href="#cb180-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-446"><a href="#cb180-446" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;footer&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb180-447"><a href="#cb180-447" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Investment Simulation Challenge<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> | Monte Carlo Analysis<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb180-448"><a href="#cb180-448" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Generated with Quarto • R • Statistical Modeling<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb180-449"><a href="#cb180-449" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb180-450"><a href="#cb180-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-451"><a href="#cb180-451" aria-hidden="true" tabindex="-1"></a><span class="fu">### 100% Grade {.alert .alert-danger}</span></span>
-<span id="cb180-452"><a href="#cb180-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-453"><a href="#cb180-453" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Strategy Comparison:** Run 100 simulations for the modified strategy. What is the probability of having more than $10,000 at age 55? Compare with the original game.</span>
-<span id="cb180-454"><a href="#cb180-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-455"><a href="#cb180-455" aria-hidden="true" tabindex="-1"></a>quarto-executable-code-5450563D</span>
-<span id="cb180-456"><a href="#cb180-456" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-457"><a href="#cb180-457" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb180-458"><a href="#cb180-458" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: strategy-comparison</span></span>
-<span id="cb180-459"><a href="#cb180-459" aria-hidden="true" tabindex="-1"></a><span class="co">#| #| echo: true</span></span>
-<span id="cb180-460"><a href="#cb180-460" aria-hidden="true" tabindex="-1"></a><span class="co"># Question 6: Strategy Comparison</span></span>
-<span id="cb180-461"><a href="#cb180-461" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
-<span id="cb180-462"><a href="#cb180-462" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb180-463"><a href="#cb180-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-464"><a href="#cb180-464" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for both strategies</span></span>
-<span id="cb180-465"><a href="#cb180-465" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb180-466"><a href="#cb180-466" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">35</span>  <span class="co"># Age 20 to 55</span></span>
-<span id="cb180-467"><a href="#cb180-467" aria-hidden="true" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb180-468"><a href="#cb180-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-469"><a href="#cb180-469" aria-hidden="true" tabindex="-1"></a><span class="co"># Original strategy parameters</span></span>
-<span id="cb180-470"><a href="#cb180-470" aria-hidden="true" tabindex="-1"></a>orig_heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span>  <span class="co"># +50% gain</span></span>
-<span id="cb180-471"><a href="#cb180-471" aria-hidden="true" tabindex="-1"></a>orig_tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.6</span>  <span class="co"># -40% loss</span></span>
-<span id="cb180-472"><a href="#cb180-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-473"><a href="#cb180-473" aria-hidden="true" tabindex="-1"></a><span class="co"># Modified strategy parameters (bet exactly 50% of current balance)</span></span>
-<span id="cb180-474"><a href="#cb180-474" aria-hidden="true" tabindex="-1"></a>mod_heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span>  <span class="co"># +50% gain on the 50% bet</span></span>
-<span id="cb180-475"><a href="#cb180-475" aria-hidden="true" tabindex="-1"></a>mod_tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># -50% loss on the 50% bet</span></span>
-<span id="cb180-476"><a href="#cb180-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-477"><a href="#cb180-477" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate original strategy</span></span>
-<span id="cb180-478"><a href="#cb180-478" aria-hidden="true" tabindex="-1"></a>simulate_original_strategy <span class="ot">&lt;-</span> <span class="cf">function</span>(initial, years, heads_mult, tails_mult) {</span>
-<span id="cb180-479"><a href="#cb180-479" aria-hidden="true" tabindex="-1"></a>  balance <span class="ot">&lt;-</span> initial</span>
-<span id="cb180-480"><a href="#cb180-480" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>years) {</span>
-<span id="cb180-481"><a href="#cb180-481" aria-hidden="true" tabindex="-1"></a>    coin_flip <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb180-482"><a href="#cb180-482" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (coin_flip <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb180-483"><a href="#cb180-483" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> heads_mult</span>
-<span id="cb180-484"><a href="#cb180-484" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb180-485"><a href="#cb180-485" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> tails_mult</span>
-<span id="cb180-486"><a href="#cb180-486" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb180-487"><a href="#cb180-487" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb180-488"><a href="#cb180-488" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(balance)</span>
-<span id="cb180-489"><a href="#cb180-489" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-490"><a href="#cb180-490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-491"><a href="#cb180-491" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate modified strategy (bet 50% of current balance)</span></span>
-<span id="cb180-492"><a href="#cb180-492" aria-hidden="true" tabindex="-1"></a>simulate_modified_strategy <span class="ot">&lt;-</span> <span class="cf">function</span>(initial, years) {</span>
-<span id="cb180-493"><a href="#cb180-493" aria-hidden="true" tabindex="-1"></a>  balance <span class="ot">&lt;-</span> initial</span>
-<span id="cb180-494"><a href="#cb180-494" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>years) {</span>
-<span id="cb180-495"><a href="#cb180-495" aria-hidden="true" tabindex="-1"></a>    coin_flip <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb180-496"><a href="#cb180-496" aria-hidden="true" tabindex="-1"></a>    bet_amount <span class="ot">&lt;-</span> balance <span class="sc">*</span> <span class="fl">0.5</span>  <span class="co"># Bet exactly 50% of current balance</span></span>
-<span id="cb180-497"><a href="#cb180-497" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb180-498"><a href="#cb180-498" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (coin_flip <span class="sc">==</span> <span class="dv">1</span>) {</span>
-<span id="cb180-499"><a href="#cb180-499" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Heads: gain 50% on the bet</span></span>
-<span id="cb180-500"><a href="#cb180-500" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">-</span> bet_amount <span class="sc">+</span> (bet_amount <span class="sc">*</span> <span class="fl">1.5</span>)</span>
-<span id="cb180-501"><a href="#cb180-501" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb180-502"><a href="#cb180-502" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Tails: lose 50% on the bet</span></span>
-<span id="cb180-503"><a href="#cb180-503" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">-</span> bet_amount <span class="sc">+</span> (bet_amount <span class="sc">*</span> <span class="fl">0.5</span>)</span>
-<span id="cb180-504"><a href="#cb180-504" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb180-505"><a href="#cb180-505" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb180-506"><a href="#cb180-506" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(balance)</span>
-<span id="cb180-507"><a href="#cb180-507" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-508"><a href="#cb180-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-509"><a href="#cb180-509" aria-hidden="true" tabindex="-1"></a><span class="co"># Run 100 simulations for original strategy</span></span>
-<span id="cb180-510"><a href="#cb180-510" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Running 100 simulations for Original Strategy...</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-511"><a href="#cb180-511" aria-hidden="true" tabindex="-1"></a>orig_final_balances <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, </span>
-<span id="cb180-512"><a href="#cb180-512" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_original_strategy</span>(initial_balance, n_years, orig_heads_multiplier, orig_tails_multiplier))</span>
-<span id="cb180-513"><a href="#cb180-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-514"><a href="#cb180-514" aria-hidden="true" tabindex="-1"></a><span class="co"># Run 100 simulations for modified strategy</span></span>
-<span id="cb180-515"><a href="#cb180-515" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Running 100 simulations for Modified Strategy...</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-516"><a href="#cb180-516" aria-hidden="true" tabindex="-1"></a>mod_final_balances <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, </span>
-<span id="cb180-517"><a href="#cb180-517" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_modified_strategy</span>(initial_balance, n_years))</span>
-<span id="cb180-518"><a href="#cb180-518" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-519"><a href="#cb180-519" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate probabilities for both strategies</span></span>
-<span id="cb180-520"><a href="#cb180-520" aria-hidden="true" tabindex="-1"></a>orig_prob_above_1000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(orig_final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>)</span>
-<span id="cb180-521"><a href="#cb180-521" aria-hidden="true" tabindex="-1"></a>orig_prob_above_10000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(orig_final_balances <span class="sc">&gt;</span> <span class="dv">10000</span>)</span>
-<span id="cb180-522"><a href="#cb180-522" aria-hidden="true" tabindex="-1"></a>mod_prob_above_1000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(mod_final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>)</span>
-<span id="cb180-523"><a href="#cb180-523" aria-hidden="true" tabindex="-1"></a>mod_prob_above_10000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(mod_final_balances <span class="sc">&gt;</span> <span class="dv">10000</span>)</span>
-<span id="cb180-524"><a href="#cb180-524" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-525"><a href="#cb180-525" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics</span></span>
-<span id="cb180-526"><a href="#cb180-526" aria-hidden="true" tabindex="-1"></a>orig_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(orig_final_balances)</span>
-<span id="cb180-527"><a href="#cb180-527" aria-hidden="true" tabindex="-1"></a>orig_median <span class="ot">&lt;-</span> <span class="fu">median</span>(orig_final_balances)</span>
-<span id="cb180-528"><a href="#cb180-528" aria-hidden="true" tabindex="-1"></a>orig_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(orig_final_balances)</span>
-<span id="cb180-529"><a href="#cb180-529" aria-hidden="true" tabindex="-1"></a>mod_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(mod_final_balances)</span>
-<span id="cb180-530"><a href="#cb180-530" aria-hidden="true" tabindex="-1"></a>mod_median <span class="ot">&lt;-</span> <span class="fu">median</span>(mod_final_balances)</span>
-<span id="cb180-531"><a href="#cb180-531" aria-hidden="true" tabindex="-1"></a>mod_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(mod_final_balances)</span>
-<span id="cb180-532"><a href="#cb180-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-533"><a href="#cb180-533" aria-hidden="true" tabindex="-1"></a><span class="co"># Display comparison results</span></span>
-<span id="cb180-534"><a href="#cb180-534" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Strategy Comparison Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-535"><a href="#cb180-535" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;============================</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-536"><a href="#cb180-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-537"><a href="#cb180-537" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;ORIGINAL STRATEGY (100% of balance at risk):</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-538"><a href="#cb180-538" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Mean final balance: $&quot;</span>, <span class="fu">round</span>(orig_mean, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-539"><a href="#cb180-539" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Median final balance: $&quot;</span>, <span class="fu">round</span>(orig_median, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-540"><a href="#cb180-540" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Standard deviation: $&quot;</span>, <span class="fu">round</span>(orig_sd, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-541"><a href="#cb180-541" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $1,000: &quot;</span>, <span class="fu">round</span>(orig_prob_above_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-542"><a href="#cb180-542" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $10,000: &quot;</span>, <span class="fu">round</span>(orig_prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-543"><a href="#cb180-543" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Min balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(orig_final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-544"><a href="#cb180-544" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Max balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(orig_final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-545"><a href="#cb180-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-546"><a href="#cb180-546" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">MODIFIED STRATEGY (50% of balance at risk):</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-547"><a href="#cb180-547" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Mean final balance: $&quot;</span>, <span class="fu">round</span>(mod_mean, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-548"><a href="#cb180-548" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Median final balance: $&quot;</span>, <span class="fu">round</span>(mod_median, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-549"><a href="#cb180-549" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Standard deviation: $&quot;</span>, <span class="fu">round</span>(mod_sd, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-550"><a href="#cb180-550" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $1,000: &quot;</span>, <span class="fu">round</span>(mod_prob_above_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-551"><a href="#cb180-551" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $10,000: &quot;</span>, <span class="fu">round</span>(mod_prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-552"><a href="#cb180-552" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Min balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(mod_final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-553"><a href="#cb180-553" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Max balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(mod_final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-554"><a href="#cb180-554" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-555"><a href="#cb180-555" aria-hidden="true" tabindex="-1"></a><span class="co"># Create comparison data frame</span></span>
-<span id="cb180-556"><a href="#cb180-556" aria-hidden="true" tabindex="-1"></a>comparison_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb180-557"><a href="#cb180-557" aria-hidden="true" tabindex="-1"></a>  <span class="at">Strategy =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Original&quot;</span>, <span class="st">&quot;Modified&quot;</span>), <span class="at">each =</span> n_simulations),</span>
-<span id="cb180-558"><a href="#cb180-558" aria-hidden="true" tabindex="-1"></a>  <span class="at">Final_Balance =</span> <span class="fu">c</span>(orig_final_balances, mod_final_balances)</span>
-<span id="cb180-559"><a href="#cb180-559" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb180-560"><a href="#cb180-560" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-561"><a href="#cb180-561" aria-hidden="true" tabindex="-1"></a><span class="co"># Create comparison plot</span></span>
-<span id="cb180-562"><a href="#cb180-562" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb180-563"><a href="#cb180-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-564"><a href="#cb180-564" aria-hidden="true" tabindex="-1"></a>p_comparison <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comparison_data, <span class="fu">aes</span>(<span class="at">x =</span> Final_Balance, <span class="at">fill =</span> Strategy)) <span class="sc">+</span></span>
-<span id="cb180-565"><a href="#cb180-565" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">position =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb180-566"><a href="#cb180-566" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1000</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb180-567"><a href="#cb180-567" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">10000</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb180-568"><a href="#cb180-568" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Strategy, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb180-569"><a href="#cb180-569" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb180-570"><a href="#cb180-570" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Strategy Comparison: Final Balance Distributions&quot;</span>,</span>
-<span id="cb180-571"><a href="#cb180-571" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;100 Simulations Each - Original vs Modified Strategy&quot;</span>,</span>
-<span id="cb180-572"><a href="#cb180-572" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Final Balance at Age 55 ($)&quot;</span>,</span>
-<span id="cb180-573"><a href="#cb180-573" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
-<span id="cb180-574"><a href="#cb180-574" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Red line = $1,000 | Blue line = $10,000&quot;</span></span>
-<span id="cb180-575"><a href="#cb180-575" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb180-576"><a href="#cb180-576" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()) <span class="sc">+</span></span>
-<span id="cb180-577"><a href="#cb180-577" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb180-578"><a href="#cb180-578" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb180-579"><a href="#cb180-579" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb180-580"><a href="#cb180-580" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">&quot;gray50&quot;</span>),</span>
-<span id="cb180-581"><a href="#cb180-581" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb180-582"><a href="#cb180-582" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb180-583"><a href="#cb180-583" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span></span>
-<span id="cb180-584"><a href="#cb180-584" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb180-585"><a href="#cb180-585" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-586"><a href="#cb180-586" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_comparison)</span>
-<span id="cb180-587"><a href="#cb180-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-588"><a href="#cb180-588" aria-hidden="true" tabindex="-1"></a><span class="co"># Statistical comparison</span></span>
-<span id="cb180-589"><a href="#cb180-589" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">STATISTICAL COMPARISON:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-590"><a href="#cb180-590" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;======================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-591"><a href="#cb180-591" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Difference in mean final balance: $&quot;</span>, <span class="fu">round</span>(mod_mean <span class="sc">-</span> orig_mean, <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-592"><a href="#cb180-592" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Difference in probability &gt; $1,000: &quot;</span>, <span class="fu">round</span>((mod_prob_above_1000 <span class="sc">-</span> orig_prob_above_1000) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot; percentage points</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-593"><a href="#cb180-593" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Difference in probability &gt; $10,000: &quot;</span>, <span class="fu">round</span>((mod_prob_above_10000 <span class="sc">-</span> orig_prob_above_10000) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot; percentage points</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-594"><a href="#cb180-594" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-595"><a href="#cb180-595" aria-hidden="true" tabindex="-1"></a><span class="co"># Risk assessment</span></span>
-<span id="cb180-596"><a href="#cb180-596" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">RISK ASSESSMENT:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-597"><a href="#cb180-597" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-598"><a href="#cb180-598" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Original strategy volatility (CV): &quot;</span>, <span class="fu">round</span>(orig_sd <span class="sc">/</span> orig_mean, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-599"><a href="#cb180-599" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Modified strategy volatility (CV): &quot;</span>, <span class="fu">round</span>(mod_sd <span class="sc">/</span> mod_mean, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb180-600"><a href="#cb180-600" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-601"><a href="#cb180-601" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (mod_sd <span class="sc">/</span> mod_mean <span class="sc">&lt;</span> orig_sd <span class="sc">/</span> orig_mean) {</span>
-<span id="cb180-602"><a href="#cb180-602" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ Modified strategy has LOWER relative volatility</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-603"><a href="#cb180-603" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb180-604"><a href="#cb180-604" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ Modified strategy has HIGHER relative volatility</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-605"><a href="#cb180-605" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-606"><a href="#cb180-606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-607"><a href="#cb180-607" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">CONCLUSION:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-608"><a href="#cb180-608" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;===========</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-609"><a href="#cb180-609" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (mod_prob_above_10000 <span class="sc">&gt;</span> orig_prob_above_10000) {</span>
-<span id="cb180-610"><a href="#cb180-610" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ Modified strategy has HIGHER probability of reaching $10,000+</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-611"><a href="#cb180-611" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb180-612"><a href="#cb180-612" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ Modified strategy has LOWER probability of reaching $10,000+</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-613"><a href="#cb180-613" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-614"><a href="#cb180-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-615"><a href="#cb180-615" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (mod_prob_above_1000 <span class="sc">&gt;</span> orig_prob_above_1000) {</span>
-<span id="cb180-616"><a href="#cb180-616" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✓ Modified strategy has HIGHER probability of staying above $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-617"><a href="#cb180-617" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb180-618"><a href="#cb180-618" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;✗ Modified strategy has LOWER probability of staying above $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb180-619"><a href="#cb180-619" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb180-620"><a href="#cb180-620" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb180-621"><a href="#cb180-621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-622"><a href="#cb180-622" aria-hidden="true" tabindex="-1"></a>**Comments on the Results:** {.results}</span>
-<span id="cb180-623"><a href="#cb180-623" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-624"><a href="#cb180-624" aria-hidden="true" tabindex="-1"></a>The strategy comparison reveals fascinating insights about risk management in investment strategies. The modified strategy, which only risks 50% of the current balance on each flip, shows significantly different characteristics compared to the original strategy that risks 100% of the balance. </span>
-<span id="cb180-625"><a href="#cb180-625" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-626"><a href="#cb180-626" aria-hidden="true" tabindex="-1"></a>The modified strategy demonstrates lower volatility and more conservative outcomes, with a higher probability of maintaining wealth above the initial $1,000 threshold. However, this comes at the cost of lower expected returns and reduced probability of achieving the high-reward outcomes that make the original strategy potentially lucrative.</span>
-<span id="cb180-627"><a href="#cb180-627" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-628"><a href="#cb180-628" aria-hidden="true" tabindex="-1"></a>This analysis highlights a fundamental trade-off in investment strategy design: **risk reduction comes at the cost of potential upside**. The modified strategy provides more consistent, predictable outcomes but sacrifices the possibility of extreme gains that characterize the original high-risk approach. This comparison is particularly valuable for understanding how different risk management approaches can fundamentally alter the probability distribution of investment outcomes.</span></code></pre></div>
-</div>
 </section>
 </section>
 </section>
@@ -1982,57 +912,6 @@ CONCLUSION:</code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
