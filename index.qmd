@@ -161,12 +161,9 @@ simulation_data <- data.frame(
 # Display key results
 cat("Single Simulation Results:\n")
 cat("========================\n")
-cat("Initial balance (age 20): $", initial_balance, "\n", sep = "")
 cat("Final balance (age 55): $", round(simulation_result[length(simulation_result)], 2), "\n", sep = "")
-cat("Total return: $", round(simulation_result[length(simulation_result)] - initial_balance, 2), "\n", sep = "")
-cat("Total return %: ", round(((simulation_result[length(simulation_result)] / initial_balance) - 1) * 100, 2), "%\n", sep = "")
-cat("Maximum balance reached: $", round(max(simulation_result), 2), "\n", sep = "")
-cat("Minimum balance reached: $", round(min(simulation_result), 2), "\n", sep = "")
+cat("Total return: ", round(((simulation_result[length(simulation_result)] / initial_balance) - 1) * 100, 1), "%\n", sep = "")
+cat("Peak balance: $", round(max(simulation_result), 2), " | Low balance: $", round(min(simulation_result), 2), "\n", sep = "")
 
 # Create the plot
 library(ggplot2)
@@ -259,13 +256,10 @@ prob_above_10000 <- mean(final_balances > 10000)
 # Display summary statistics
 cat("\n100 Simulations Summary:\n")
 cat("========================\n")
-cat("Mean final balance: $", round(mean_balance, 2), "\n", sep = "")
-cat("Median final balance: $", round(median_balance, 2), "\n", sep = "")
-cat("Standard deviation: $", round(sd_balance, 2), "\n", sep = "")
-cat("Minimum balance: $", round(min_balance, 2), "\n", sep = "")
-cat("Maximum balance: $", round(max_balance, 2), "\n", sep = "")
-cat("Probability above $1,000: ", round(prob_above_initial * 100, 1), "%\n", sep = "")
-cat("Probability above $10,000: ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
+cat("Mean: $", round(mean_balance, 0), " | Median: $", round(median_balance, 0), "\n", sep = "")
+cat("Range: $", round(min_balance, 0), " to $", round(max_balance, 0), "\n", sep = "")
+cat("Success rate (>$1,000): ", round(prob_above_initial * 100, 1), "%\n", sep = "")
+cat("High success (>$10,000): ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
 
 # Create probability distribution plot
 library(ggplot2)
@@ -297,13 +291,9 @@ print(p)
 # Note: Plot will be automatically saved by Quarto
 
 # Show distribution of results
-cat("\nDistribution of Final Balances:\n")
-cat("==============================\n")
-cat("$0 - $100: ", sum(final_balances < 100), " simulations\n", sep = "")
-cat("$100 - $1,000: ", sum(final_balances >= 100 & final_balances < 1000), " simulations\n", sep = "")
-cat("$1,000 - $10,000: ", sum(final_balances >= 1000 & final_balances < 10000), " simulations\n", sep = "")
-cat("$10,000 - $100,000: ", sum(final_balances >= 10000 & final_balances < 100000), " simulations\n", sep = "")
-cat("$100,000+: ", sum(final_balances >= 100000), " simulations\n", sep = "")
+cat("\nDistribution:\n")
+cat("============\n")
+cat("Below $1,000: ", sum(final_balances < 1000), " | $1,000-$10,000: ", sum(final_balances >= 1000 & final_balances < 10000), " | Above $10,000: ", sum(final_balances >= 10000), "\n", sep = "")
 ```
 
 *Distribution plot shown above*
@@ -362,34 +352,10 @@ ci_upper <- prob_above_1000 + 1.96 * se
 # Display results
 cat("Probability Analysis Results:\n")
 cat("============================\n")
-cat("Based on 100 simulations:\n\n")
-
-cat("Probability that balance > $1,000 at age 55:\n")
-cat("  Point estimate: ", round(prob_above_1000 * 100, 1), "%\n", sep = "")
-cat("  95% Confidence Interval: [", round(ci_lower * 100, 1), "%, ", round(ci_upper * 100, 1), "%]\n", sep = "")
-cat("  Number of simulations above $1,000: ", sum(final_balances > 1000), " out of ", n_sims, "\n", sep = "")
-
-cat("\nAdditional Probability Thresholds:\n")
-cat("  Probability > $10,000: ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
-cat("  Probability > $100,000: ", round(prob_above_100000 * 100, 1), "%\n", sep = "")
-
-cat("\nInterpretation:\n")
-if (prob_above_1000 > 0.5) {
-  cat("  ✓ More likely than not to end up above $1,000\n")
-} else {
-  cat("  ✗ More likely to end up at or below $1,000\n")
-}
-
-cat("\nRisk Assessment:\n")
-cat("  Probability of losing money: ", round(prob_below_1000 * 100, 1), "%\n", sep = "")
-cat("  Expected final balance: $", round(mean(final_balances), 2), "\n", sep = "")
-cat("  Median final balance: $", round(median(final_balances), 2), "\n", sep = "")
-
-# Show distribution summary
-cat("\nDistribution Summary:\n")
-cat("  Minimum: $", round(min(final_balances), 2), "\n", sep = "")
-cat("  Maximum: $", round(max(final_balances), 2), "\n", sep = "")
-cat("  Standard deviation: $", round(sd(final_balances), 2), "\n", sep = "")
+cat("Probability > $1,000: ", round(prob_above_1000 * 100, 1), "% (", sum(final_balances > 1000), " out of ", n_sims, " simulations)\n", sep = "")
+cat("95% Confidence Interval: [", round(ci_lower * 100, 1), "%, ", round(ci_upper * 100, 1), "%]\n", sep = "")
+cat("Probability > $10,000: ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
+cat("Expected final balance: $", round(mean(final_balances), 0), "\n", sep = "")
 ```
 **Answer:** 26% chance of having greater than $1,000 at age 55.
 
@@ -476,25 +442,12 @@ mod_sd <- sd(mod_final_balances)
 
 # Display comparison results
 cat("\nStrategy Comparison Results:\n")
-cat("============================\n\n")
+cat("============================\n")
+cat("ORIGINAL STRATEGY (100% at risk):\n")
+cat("  Mean: $", round(orig_mean, 0), " | Success rate: ", round(orig_prob_above_1000 * 100, 1), "% | High success: ", round(orig_prob_above_10000 * 100, 1), "%\n", sep = "")
 
-cat("ORIGINAL STRATEGY (100% of balance at risk):\n")
-cat("  Mean final balance: $", round(orig_mean, 2), "\n", sep = "")
-cat("  Median final balance: $", round(orig_median, 2), "\n", sep = "")
-cat("  Standard deviation: $", round(orig_sd, 2), "\n", sep = "")
-cat("  Probability > $1,000: ", round(orig_prob_above_1000 * 100, 1), "%\n", sep = "")
-cat("  Probability > $10,000: ", round(orig_prob_above_10000 * 100, 1), "%\n", sep = "")
-cat("  Min balance: $", round(min(orig_final_balances), 2), "\n", sep = "")
-cat("  Max balance: $", round(max(orig_final_balances), 2), "\n", sep = "")
-
-cat("\nMODIFIED STRATEGY (50% of balance at risk):\n")
-cat("  Mean final balance: $", round(mod_mean, 2), "\n", sep = "")
-cat("  Median final balance: $", round(mod_median, 2), "\n", sep = "")
-cat("  Standard deviation: $", round(mod_sd, 2), "\n", sep = "")
-cat("  Probability > $1,000: ", round(mod_prob_above_1000 * 100, 1), "%\n", sep = "")
-cat("  Probability > $10,000: ", round(mod_prob_above_10000 * 100, 1), "%\n", sep = "")
-cat("  Min balance: $", round(min(mod_final_balances), 2), "\n", sep = "")
-cat("  Max balance: $", round(max(mod_final_balances), 2), "\n", sep = "")
+cat("\nMODIFIED STRATEGY (50% at risk):\n")
+cat("  Mean: $", round(mod_mean, 0), " | Success rate: ", round(mod_prob_above_1000 * 100, 1), "% | High success: ", round(mod_prob_above_10000 * 100, 1), "%\n", sep = "")
 
 # Create comparison data frame
 comparison_data <- data.frame(
@@ -530,37 +483,11 @@ p_comparison <- ggplot(comparison_data, aes(x = Final_Balance, fill = Strategy))
 print(p_comparison)
 
 # Statistical comparison
-cat("\nSTATISTICAL COMPARISON:\n")
-cat("======================\n")
-cat("Difference in mean final balance: $", round(mod_mean - orig_mean, 2), "\n", sep = "")
-cat("Difference in probability > $1,000: ", round((mod_prob_above_1000 - orig_prob_above_1000) * 100, 1), " percentage points\n", sep = "")
-cat("Difference in probability > $10,000: ", round((mod_prob_above_10000 - orig_prob_above_10000) * 100, 1), " percentage points\n", sep = "")
-
-# Risk assessment
-cat("\nRISK ASSESSMENT:\n")
-cat("================\n")
-cat("Original strategy volatility (CV): ", round(orig_sd / orig_mean, 3), "\n", sep = "")
-cat("Modified strategy volatility (CV): ", round(mod_sd / mod_mean, 3), "\n", sep = "")
-
-if (mod_sd / mod_mean < orig_sd / orig_mean) {
-  cat("✓ Modified strategy has LOWER relative volatility\n")
-} else {
-  cat("✗ Modified strategy has HIGHER relative volatility\n")
-}
-
-cat("\nCONCLUSION:\n")
+cat("\nCOMPARISON:\n")
 cat("===========\n")
-if (mod_prob_above_10000 > orig_prob_above_10000) {
-  cat("✓ Modified strategy has HIGHER probability of reaching $10,000+\n")
-} else {
-  cat("✗ Modified strategy has LOWER probability of reaching $10,000+\n")
-}
-
-if (mod_prob_above_1000 > orig_prob_above_1000) {
-  cat("✓ Modified strategy has HIGHER probability of staying above $1,000\n")
-} else {
-  cat("✗ Modified strategy has LOWER probability of staying above $1,000\n")
-}
+cat("Mean difference: $", round(mod_mean - orig_mean, 0), "\n", sep = "")
+cat("Success rate difference: ", round((mod_prob_above_1000 - orig_prob_above_1000) * 100, 1), " percentage points\n", sep = "")
+cat("High success difference: ", round((mod_prob_above_10000 - orig_prob_above_10000) * 100, 1), " percentage points\n", sep = "")
 ```
 
 **Comments on the Results:**
