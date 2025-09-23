@@ -211,7 +211,100 @@ The results of the simulation were extremely positive! At age 55 I ended with ar
 #| label: multiple-simulations
 #| echo: true
 
-# Your code here
+# Set seed for reproducibility
+set.seed(123)
+
+# Parameters
+initial_balance <- 1000
+heads_multiplier <- 1.5  # +50% gain
+tails_multiplier <- 0.6  # -40% loss
+n_years <- 35  # Age 20 to 55
+n_simulations <- 100
+
+# Function to simulate one complete game (same as Question 3)
+simulate_investment_game <- function(initial, years, heads_mult, tails_mult) {
+  balance <- initial
+  for (year in 1:years) {
+    coin_flip <- rbinom(1, 1, 0.5)
+    if (coin_flip == 1) {
+      balance <- balance * heads_mult
+    } else {
+      balance <- balance * tails_mult
+    }
+  }
+  return(balance)
+}
+
+# Run 100 simulations
+cat("Running 100 simulations...\n")
+final_balances <- replicate(n_simulations, 
+  simulate_investment_game(initial_balance, n_years, heads_multiplier, tails_multiplier))
+
+# Create data frame for analysis
+simulation_results <- data.frame(
+  simulation = 1:n_simulations,
+  final_balance = final_balances
+)
+
+# Calculate summary statistics
+mean_balance <- mean(final_balances)
+median_balance <- median(final_balances)
+sd_balance <- sd(final_balances)
+min_balance <- min(final_balances)
+max_balance <- max(final_balances)
+prob_above_initial <- mean(final_balances > initial_balance)
+prob_above_10000 <- mean(final_balances > 10000)
+
+# Display summary statistics
+cat("\n100 Simulations Summary:\n")
+cat("========================\n")
+cat("Mean final balance: $", round(mean_balance, 2), "\n", sep = "")
+cat("Median final balance: $", round(median_balance, 2), "\n", sep = "")
+cat("Standard deviation: $", round(sd_balance, 2), "\n", sep = "")
+cat("Minimum balance: $", round(min_balance, 2), "\n", sep = "")
+cat("Maximum balance: $", round(max_balance, 2), "\n", sep = "")
+cat("Probability above $1,000: ", round(prob_above_initial * 100, 1), "%\n", sep = "")
+cat("Probability above $10,000: ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
+
+# Create probability distribution plot
+library(ggplot2)
+
+# Create the plot
+p <- ggplot(simulation_results, aes(x = final_balance)) +
+  geom_histogram(bins = 20, fill = "steelblue", alpha = 0.7, color = "black") +
+  geom_vline(xintercept = initial_balance, color = "red", linetype = "dashed", linewidth = 1) +
+  geom_vline(xintercept = mean_balance, color = "green", linetype = "solid", linewidth = 1) +
+  labs(
+    title = "Distribution of Final Account Balances",
+    subtitle = "100 Simulations: Age 20 to 55",
+    x = "Final Balance at Age 55 ($)",
+    y = "Frequency",
+    caption = "Red dashed line = Initial $1,000 | Green line = Mean"
+  ) +
+  scale_x_continuous(labels = scales::dollar_format()) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    plot.subtitle = element_text(size = 12, color = "gray50"),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11)
+  )
+
+# Display the plot
+print(p)
+
+# Save the plot to the project folder
+ggsave("originally.png", plot = p, width = 10, height = 6, dpi = 300)
+cat("\nPlot saved as 'originally.png' in the project folder\n")
+
+# Show distribution of results
+cat("\nDistribution of Final Balances:\n")
+cat("==============================\n")
+cat("$0 - $100: ", sum(final_balances < 100), " simulations\n", sep = "")
+cat("$100 - $1,000: ", sum(final_balances >= 100 & final_balances < 1000), " simulations\n", sep = "")
+cat("$1,000 - $10,000: ", sum(final_balances >= 1000 & final_balances < 10000), " simulations\n", sep = "")
+cat("$10,000 - $100,000: ", sum(final_balances >= 10000 & final_balances < 100000), " simulations\n", sep = "")
+cat("$100,000+: ", sum(final_balances >= 100000), " simulations\n", sep = "")
 ```
 
 ### 95% Grade
