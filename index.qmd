@@ -6,6 +6,8 @@ format:
 execute:
   echo: false
   eval: true
+  warning: false
+  message: false
 ---
 
 # Simulation Challenge
@@ -28,7 +30,7 @@ Same as above, but you must bet exactly 50% of your current balance on each flip
 
 ```{r}
 #| label: expected-value
-#| echo: true
+#| echo: false
 
 # Parameters for the original game
 initial_balance <- 1000
@@ -65,7 +67,7 @@ The expected value analysis reveals a counterintuitive but mathematically sound 
 
 ```{r}
 #| label: expectation-reality
-#| echo: true
+#| echo: false
 
 # Use the same parameters from Question 1
 initial_balance <- 1000
@@ -111,7 +113,7 @@ The expectation vs. reality analysis confirms that the game appears mathematical
 
 ```{r}
 #| label: single-simulation
-#| echo: true
+#| echo: false
 
 # Set seed for reproducibility
 set.seed(123)
@@ -208,7 +210,7 @@ The results of the simulation were extremely positive! At age 55 I ended with ar
 
 ```{r}
 #| label: multiple-simulations
-#| echo: true
+#| echo: false
 
 # Set seed for reproducibility
 set.seed(123)
@@ -312,7 +314,7 @@ cat("$100,000+: ", sum(final_balances >= 100000), " simulations\n", sep = "")
 
 ```{r}
 #| label: probability-analysis
-#| echo: true
+#| echo: false
 
 # Use the same simulation results from Question 4
 # (This assumes the 100 simulations were already run)
@@ -398,7 +400,7 @@ cat("  Standard deviation: $", round(sd(final_balances), 2), "\n", sep = "")
 
 ```{r}
 #| label: strategy-comparison
-#| #| echo: true
+#| #| echo: false
 # Question 6: Strategy Comparison
 # Set seed for reproducibility
 set.seed(123)
