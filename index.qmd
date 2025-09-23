@@ -61,7 +61,7 @@ cat("\nAnswer: The expected value after 1 coin flip is $", expected_value, "\n",
 
 **Discussion of Results:**
 
-At first glance, the game looks appealing: the expected value is $1,050, or a 5% gain per flip. But that number only tells you the average if the game is played countless times. In reality, because each flip compounds, a bad run can shrink your balance fast, while a good run can boost it just as quickly. The real takeaway is that expected value shows the long-run average, but your actual outcome depends entirely on the sequence you get making the game much riskier than it first appears.
+The game initially seems to be a good investment, but the expected value is only a theoretical average. In reality, the game is much riskier than it first appears. While the expected value is 1050, which is a 5% gain per flip, the actual outcome is much more volatile. Since the average tells you only the results of playing many times in the long run, it is not a good indicator of the actual outcome of a single game. 
 
 2. **Expectation vs. Reality:** Is the expected value positive or negative? Do you expect your account to be worth more or less than $1,000?
 
@@ -107,7 +107,7 @@ cat("However, this is just the average outcome - your actual result could be ver
 
 **Discussion of Results:**
 
-On paper, the game looks strong: the expected value is $1,050, or a 5% gain per flip. That suggests players should come out ahead on average. But averages only hold when you can play thousands of times. In reality, you only get one sequence of flips until age 55, and that exposes you to the full volatility. A few losses can drag your balance down sharply, while a lucky run could send it soaring. The real lesson is that expected value shows the average, not the risk. In high-variance situations like this, you have to think about the whole range of possible outcomes—not just the appealing average.
+On paper, the game looks enticing since the expected value is $1,050, or a 5% gain per flip. That suggests players should come out ahead on average. But averages only hold when you can play many many times. In reality, you only get one sequence of flips until age 55, and that exposes you to the full volatility of the rules. That being losing a few games can quickly drag your balance down, while on the other hand, a lucky run could make you thousands of dollars. The real lesson is that expected value shows the average, not the risk. In high-variance situations like this, you have to think about the whole range of possible outcome not just the average which can be deceiving.
 
 3. **Single Simulation:** Run one simulation showing account balance over time. Create a plot and comment on the results.
 
