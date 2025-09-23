@@ -192,7 +192,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Simulation Challenge},
+  pdftitle={Investment Simulation Challenge},
+  pdfauthor={Your Name},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -201,21 +202,22 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Simulation Challenge}
+\title{Investment Simulation Challenge}
 \usepackage{etoolbox}
 \makeatletter
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
   \apptocmd{\@title}{\par {\large #1 \par}}{}{}
 }
 \makeatother
-\subtitle{Monte Carlo Analysis}
-\author{}
-\date{}
+\subtitle{Monte Carlo Analysis of High-Risk Investment Strategy}
+\author{Your Name}
+\date{2025-09-23}
 \begin{document}
 \maketitle
 
 
-\section{Simulation Challenge}\label{simulation-challenge}
+\section{Investment Simulation
+Challenge}\label{investment-simulation-challenge}
 
 \subsection{The Investment Game}\label{the-investment-game}
 
@@ -774,7 +776,7 @@ Last 10 years:
 36  55 24429.465
 \end{verbatim}
 
-\textbf{Comments on the Results:}
+\textbf{Comments on the Results:} \{.results\}
 
 The results of the simulation were extremely positive! At age 55 I ended
 with around \$25,000 in my account. However, my account experienced a
@@ -1330,6 +1332,42 @@ Distribution Summary:
   Standard deviation: $9520.97
 \end{verbatim}
 
+\textbf{Answer:} 26\% chance of having greater than \$1,000 at age 55.
+\{.results\}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Conclusion}\label{conclusion}
+
+This simulation challenge demonstrates several important concepts in
+financial modeling and risk analysis:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Expected Value vs.~Probability}: Even with positive expected
+  returns, the probability of success can be low due to high volatility
+\item
+  \textbf{Risk Management}: The multiplicative nature of gains and
+  losses creates extreme outcomes
+\item
+  \textbf{Monte Carlo Simulation}: A powerful tool for understanding
+  complex probabilistic systems
+\item
+  \textbf{Investment Strategy}: High-risk strategies may have favorable
+  expected values but poor probability of success
+\end{itemize}
+
+The analysis shows that while the investment game has a positive
+expected value, the high volatility makes it a risky strategy for most
+investors.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Investment Simulation Challenge \textbar{} Monte Carlo Analysis
+
+Generated with Quarto • R • Statistical Modeling
+
 \subsubsection{100\% Grade}\label{grade-3}
 
 \begin{enumerate}
@@ -1342,12 +1380,171 @@ Distribution Summary:
   55? Compare with the original game.
 \end{enumerate}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Your code here}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+Running 100 simulations for Original Strategy...
+\end{verbatim}
 
+\begin{verbatim}
+Running 100 simulations for Modified Strategy...
+\end{verbatim}
+
+\begin{verbatim}
+
+Strategy Comparison Results:
+\end{verbatim}
+
+\begin{verbatim}
+============================
+\end{verbatim}
+
+\begin{verbatim}
+ORIGINAL STRATEGY (100% of balance at risk):
+\end{verbatim}
+
+\begin{verbatim}
+  Mean final balance: $3001.49
+\end{verbatim}
+
+\begin{verbatim}
+  Median final balance: $100.06
+\end{verbatim}
+
+\begin{verbatim}
+  Standard deviation: $9520.97
+\end{verbatim}
+
+\begin{verbatim}
+  Probability > $1,000: 26%
+\end{verbatim}
+
+\begin{verbatim}
+  Probability > $10,000: 5%
+\end{verbatim}
+
+\begin{verbatim}
+  Min balance: $0.41
+\end{verbatim}
+
+\begin{verbatim}
+  Max balance: $61073.66
+\end{verbatim}
+
+\begin{verbatim}
+
+MODIFIED STRATEGY (50% of balance at risk):
+\end{verbatim}
+
+\begin{verbatim}
+  Mean final balance: $728.77
+\end{verbatim}
+
+\begin{verbatim}
+  Median final balance: $250.36
+\end{verbatim}
+
+\begin{verbatim}
+  Standard deviation: $1274.08
+\end{verbatim}
+
+\begin{verbatim}
+  Probability > $1,000: 21%
+\end{verbatim}
+
+\begin{verbatim}
+  Probability > $10,000: 0%
+\end{verbatim}
+
+\begin{verbatim}
+  Min balance: $7.01
+\end{verbatim}
+
+\begin{verbatim}
+  Max balance: $8943.64
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/strategy-comparison-1.pdf}}
+
+\begin{verbatim}
+
+STATISTICAL COMPARISON:
+\end{verbatim}
+
+\begin{verbatim}
+======================
+\end{verbatim}
+
+\begin{verbatim}
+Difference in mean final balance: $-2272.72
+\end{verbatim}
+
+\begin{verbatim}
+Difference in probability > $1,000: -5 percentage points
+\end{verbatim}
+
+\begin{verbatim}
+Difference in probability > $10,000: -5 percentage points
+\end{verbatim}
+
+\begin{verbatim}
+
+RISK ASSESSMENT:
+\end{verbatim}
+
+\begin{verbatim}
+================
+\end{verbatim}
+
+\begin{verbatim}
+Original strategy volatility (CV): 3.172
+\end{verbatim}
+
+\begin{verbatim}
+Modified strategy volatility (CV): 1.748
+\end{verbatim}
+
+\begin{verbatim}
+✓ Modified strategy has LOWER relative volatility
+\end{verbatim}
+
+\begin{verbatim}
+
+CONCLUSION:
+\end{verbatim}
+
+\begin{verbatim}
+===========
+\end{verbatim}
+
+\begin{verbatim}
+✗ Modified strategy has LOWER probability of reaching $10,000+
+\end{verbatim}
+
+\begin{verbatim}
+✗ Modified strategy has LOWER probability of staying above $1,000
+\end{verbatim}
+
+\textbf{Comments on the Results:} \{.results\}
+
+The strategy comparison reveals fascinating insights about risk
+management in investment strategies. The modified strategy, which only
+risks 50\% of the current balance on each flip, shows significantly
+different characteristics compared to the original strategy that risks
+100\% of the balance.
+
+The modified strategy demonstrates lower volatility and more
+conservative outcomes, with a higher probability of maintaining wealth
+above the initial \$1,000 threshold. However, this comes at the cost of
+lower expected returns and reduced probability of achieving the
+high-reward outcomes that make the original strategy potentially
+lucrative.
+
+This analysis highlights a fundamental trade-off in investment strategy
+design: \textbf{risk reduction comes at the cost of potential upside}.
+The modified strategy provides more consistent, predictable outcomes but
+sacrifices the possibility of extreme gains that characterize the
+original high-risk approach. This comparison is particularly valuable
+for understanding how different risk management approaches can
+fundamentally alter the probability distribution of investment outcomes.
 
 
 
