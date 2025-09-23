@@ -3,7 +3,6 @@ title: "Simulation Challenge"
 subtitle: "Monte Carlo Analysis"
 format:
   html: default
-  pdf: default
 execute:
   echo: false
   eval: true
@@ -293,9 +292,7 @@ p <- ggplot(simulation_results, aes(x = final_balance)) +
 # Display the plot
 print(p)
 
-# Save the plot to the project folder
-ggsave("originally.png", plot = p, width = 10, height = 6, dpi = 300)
-cat("\nPlot saved as 'originally.png' in the project folder\n")
+# Note: Plot will be automatically saved by Quarto
 
 # Show distribution of results
 cat("\nDistribution of Final Balances:\n")
@@ -307,7 +304,7 @@ cat("$10,000 - $100,000: ", sum(final_balances >= 10000 & final_balances < 10000
 cat("$100,000+: ", sum(final_balances >= 100000), " simulations\n", sep = "")
 ```
 
-![Distribution of Final Balances - 100 Simulations](originally.png)
+*Distribution plot shown above*
 
 ### 95% Grade
 
