@@ -563,6 +563,12 @@ Distribution of Final Balances:</code></pre>
 <pre><code>$100,000+: 0 simulations</code></pre>
 </div>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="originally.png" class="img-fluid" /></p>
+<figcaption>Distribution of Final Balances - 100 Simulations</figcaption>
+</figure>
+</div>
 </section>
 <section id="grade-2" class="level3">
 <h3>95% Grade</h3>
@@ -570,7 +576,139 @@ Distribution of Final Balances:</code></pre>
 <li><strong>Probability Analysis:</strong> What is the probability that your balance will be greater than $1,000 at age 55?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb106"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the same simulation results from Question 4</span></span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (This assumes the 100 simulations were already run)</span></span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb106-6"><a href="#cb106-6" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb106-7"><a href="#cb106-7" aria-hidden="true" tabindex="-1"></a>heads_multiplier <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb106-8"><a href="#cb106-8" aria-hidden="true" tabindex="-1"></a>tails_multiplier <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb106-9"><a href="#cb106-9" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="dv">35</span></span>
+<span id="cb106-10"><a href="#cb106-10" aria-hidden="true" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb106-11"><a href="#cb106-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-12"><a href="#cb106-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to simulate one complete game</span></span>
+<span id="cb106-13"><a href="#cb106-13" aria-hidden="true" tabindex="-1"></a>simulate_investment_game <span class="ot">&lt;-</span> <span class="cf">function</span>(initial, years, heads_mult, tails_mult) {</span>
+<span id="cb106-14"><a href="#cb106-14" aria-hidden="true" tabindex="-1"></a>  balance <span class="ot">&lt;-</span> initial</span>
+<span id="cb106-15"><a href="#cb106-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (year <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>years) {</span>
+<span id="cb106-16"><a href="#cb106-16" aria-hidden="true" tabindex="-1"></a>    coin_flip <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
+<span id="cb106-17"><a href="#cb106-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (coin_flip <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb106-18"><a href="#cb106-18" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> heads_mult</span>
+<span id="cb106-19"><a href="#cb106-19" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb106-20"><a href="#cb106-20" aria-hidden="true" tabindex="-1"></a>      balance <span class="ot">&lt;-</span> balance <span class="sc">*</span> tails_mult</span>
+<span id="cb106-21"><a href="#cb106-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb106-22"><a href="#cb106-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb106-23"><a href="#cb106-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(balance)</span>
+<span id="cb106-24"><a href="#cb106-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb106-25"><a href="#cb106-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-26"><a href="#cb106-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Run 100 simulations (same as Question 4)</span></span>
+<span id="cb106-27"><a href="#cb106-27" aria-hidden="true" tabindex="-1"></a>final_balances <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, </span>
+<span id="cb106-28"><a href="#cb106-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">simulate_investment_game</span>(initial_balance, n_years, heads_multiplier, tails_multiplier))</span>
+<span id="cb106-29"><a href="#cb106-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-30"><a href="#cb106-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate probability that balance &gt; $1,000</span></span>
+<span id="cb106-31"><a href="#cb106-31" aria-hidden="true" tabindex="-1"></a>prob_above_1000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>)</span>
+<span id="cb106-32"><a href="#cb106-32" aria-hidden="true" tabindex="-1"></a>prob_below_1000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&lt;=</span> <span class="dv">1000</span>)</span>
+<span id="cb106-33"><a href="#cb106-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-34"><a href="#cb106-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate additional probability thresholds</span></span>
+<span id="cb106-35"><a href="#cb106-35" aria-hidden="true" tabindex="-1"></a>prob_above_10000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">10000</span>)</span>
+<span id="cb106-36"><a href="#cb106-36" aria-hidden="true" tabindex="-1"></a>prob_above_100000 <span class="ot">&lt;-</span> <span class="fu">mean</span>(final_balances <span class="sc">&gt;</span> <span class="dv">100000</span>)</span>
+<span id="cb106-37"><a href="#cb106-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-38"><a href="#cb106-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate confidence interval for the probability</span></span>
+<span id="cb106-39"><a href="#cb106-39" aria-hidden="true" tabindex="-1"></a>n_sims <span class="ot">&lt;-</span> <span class="fu">length</span>(final_balances)</span>
+<span id="cb106-40"><a href="#cb106-40" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(prob_above_1000 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> prob_above_1000) <span class="sc">/</span> n_sims)</span>
+<span id="cb106-41"><a href="#cb106-41" aria-hidden="true" tabindex="-1"></a>ci_lower <span class="ot">&lt;-</span> prob_above_1000 <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
+<span id="cb106-42"><a href="#cb106-42" aria-hidden="true" tabindex="-1"></a>ci_upper <span class="ot">&lt;-</span> prob_above_1000 <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
+<span id="cb106-43"><a href="#cb106-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-44"><a href="#cb106-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb106-45"><a href="#cb106-45" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability Analysis Results:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Probability Analysis Results:</code></pre>
+</div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;============================</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>============================</code></pre>
+</div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Based on 100 simulations:</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Based on 100 simulations:</code></pre>
+</div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probability that balance &gt; $1,000 at age 55:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Probability that balance &gt; $1,000 at age 55:</code></pre>
+</div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Point estimate: &quot;</span>, <span class="fu">round</span>(prob_above_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Point estimate: 26%</code></pre>
+</div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  95% Confidence Interval: [&quot;</span>, <span class="fu">round</span>(ci_lower <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%, &quot;</span>, <span class="fu">round</span>(ci_upper <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%]</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  95% Confidence Interval: [17.4%, 34.6%]</code></pre>
+</div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Number of simulations above $1,000: &quot;</span>, <span class="fu">sum</span>(final_balances <span class="sc">&gt;</span> <span class="dv">1000</span>), <span class="st">&quot; out of &quot;</span>, n_sims, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Number of simulations above $1,000: 26 out of 100</code></pre>
+</div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Additional Probability Thresholds:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Additional Probability Thresholds:</code></pre>
+</div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $10,000: &quot;</span>, <span class="fu">round</span>(prob_above_10000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Probability &gt; $10,000: 5%</code></pre>
+</div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability &gt; $100,000: &quot;</span>, <span class="fu">round</span>(prob_above_100000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Probability &gt; $100,000: 0%</code></pre>
+</div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Interpretation:</code></pre>
+</div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (prob_above_1000 <span class="sc">&gt;</span> <span class="fl">0.5</span>) {</span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;  ✓ More likely than not to end up above $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;  ✗ More likely to end up at or below $1,000</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ✗ More likely to end up at or below $1,000</code></pre>
+</div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Risk Assessment:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Risk Assessment:</code></pre>
+</div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Probability of losing money: &quot;</span>, <span class="fu">round</span>(prob_below_1000 <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Probability of losing money: 74%</code></pre>
+</div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Expected final balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">mean</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Expected final balance: $3001.49</code></pre>
+</div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Median final balance: $&quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Median final balance: $100.06</code></pre>
+</div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show distribution summary</span></span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Distribution Summary:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Distribution Summary:</code></pre>
+</div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Minimum: $&quot;</span>, <span class="fu">round</span>(<span class="fu">min</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Minimum: $0.41</code></pre>
+</div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Maximum: $&quot;</span>, <span class="fu">round</span>(<span class="fu">max</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Maximum: $61073.66</code></pre>
+</div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;  Standard deviation: $&quot;</span>, <span class="fu">round</span>(<span class="fu">sd</span>(final_balances), <span class="dv">2</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Standard deviation: $9520.97</code></pre>
+</div>
 </div>
 </section>
 <section id="grade-3" class="level3">
@@ -579,7 +717,7 @@ Distribution of Final Balances:</code></pre>
 <li><strong>Strategy Comparison:</strong> Run 100 simulations for the modified strategy. What is the probability of having more than $10,000 at age 55? Compare with the original game.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb107"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code></pre></div>
 </div>
 </section>
 </section>

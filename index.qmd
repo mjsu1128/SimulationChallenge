@@ -307,6 +307,8 @@ cat("$10,000 - $100,000: ", sum(final_balances >= 10000 & final_balances < 10000
 cat("$100,000+: ", sum(final_balances >= 100000), " simulations\n", sep = "")
 ```
 
+![Distribution of Final Balances - 100 Simulations](originally.png)
+
 ### 95% Grade
 
 5. **Probability Analysis:** What is the probability that your balance will be greater than $1,000 at age 55?
@@ -315,8 +317,82 @@ cat("$100,000+: ", sum(final_balances >= 100000), " simulations\n", sep = "")
 #| label: probability-analysis
 #| echo: true
 
-# Your code here
+# Use the same simulation results from Question 4
+# (This assumes the 100 simulations were already run)
+set.seed(123)
+
+# Parameters
+initial_balance <- 1000
+heads_multiplier <- 1.5
+tails_multiplier <- 0.6
+n_years <- 35
+n_simulations <- 100
+
+# Function to simulate one complete game
+simulate_investment_game <- function(initial, years, heads_mult, tails_mult) {
+  balance <- initial
+  for (year in 1:years) {
+    coin_flip <- rbinom(1, 1, 0.5)
+    if (coin_flip == 1) {
+      balance <- balance * heads_mult
+    } else {
+      balance <- balance * tails_mult
+    }
+  }
+  return(balance)
+}
+
+# Run 100 simulations (same as Question 4)
+final_balances <- replicate(n_simulations, 
+  simulate_investment_game(initial_balance, n_years, heads_multiplier, tails_multiplier))
+
+# Calculate probability that balance > $1,000
+prob_above_1000 <- mean(final_balances > 1000)
+prob_below_1000 <- mean(final_balances <= 1000)
+
+# Calculate additional probability thresholds
+prob_above_10000 <- mean(final_balances > 10000)
+prob_above_100000 <- mean(final_balances > 100000)
+
+# Calculate confidence interval for the probability
+n_sims <- length(final_balances)
+se <- sqrt(prob_above_1000 * (1 - prob_above_1000) / n_sims)
+ci_lower <- prob_above_1000 - 1.96 * se
+ci_upper <- prob_above_1000 + 1.96 * se
+
+# Display results
+cat("Probability Analysis Results:\n")
+cat("============================\n")
+cat("Based on 100 simulations:\n\n")
+
+cat("Probability that balance > $1,000 at age 55:\n")
+cat("  Point estimate: ", round(prob_above_1000 * 100, 1), "%\n", sep = "")
+cat("  95% Confidence Interval: [", round(ci_lower * 100, 1), "%, ", round(ci_upper * 100, 1), "%]\n", sep = "")
+cat("  Number of simulations above $1,000: ", sum(final_balances > 1000), " out of ", n_sims, "\n", sep = "")
+
+cat("\nAdditional Probability Thresholds:\n")
+cat("  Probability > $10,000: ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
+cat("  Probability > $100,000: ", round(prob_above_100000 * 100, 1), "%\n", sep = "")
+
+cat("\nInterpretation:\n")
+if (prob_above_1000 > 0.5) {
+  cat("  ✓ More likely than not to end up above $1,000\n")
+} else {
+  cat("  ✗ More likely to end up at or below $1,000\n")
+}
+
+cat("\nRisk Assessment:\n")
+cat("  Probability of losing money: ", round(prob_below_1000 * 100, 1), "%\n", sep = "")
+cat("  Expected final balance: $", round(mean(final_balances), 2), "\n", sep = "")
+cat("  Median final balance: $", round(median(final_balances), 2), "\n", sep = "")
+
+# Show distribution summary
+cat("\nDistribution Summary:\n")
+cat("  Minimum: $", round(min(final_balances), 2), "\n", sep = "")
+cat("  Maximum: $", round(max(final_balances), 2), "\n", sep = "")
+cat("  Standard deviation: $", round(sd(final_balances), 2), "\n", sep = "")
 ```
+26% chance of having greater than $1,000 at age 55.
 
 ### 100% Grade
 

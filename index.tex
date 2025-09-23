@@ -1056,6 +1056,16 @@ $10,000 - $100,000: 5 simulations
 $100,000+: 0 simulations
 \end{verbatim}
 
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{originally.png}}
+
+}
+
+\caption{Distribution of Final Balances - 100 Simulations}
+
+\end{figure}%
+
 \subsubsection{95\% Grade}\label{grade-2}
 
 \begin{enumerate}
@@ -1069,9 +1079,256 @@ $100,000+: 0 simulations
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Your code here}
+\CommentTok{\# Use the same simulation results from Question 4}
+\CommentTok{\# (This assumes the 100 simulations were already run)}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\CommentTok{\# Parameters}
+\NormalTok{initial\_balance }\OtherTok{\textless{}{-}} \DecValTok{1000}
+\NormalTok{heads\_multiplier }\OtherTok{\textless{}{-}} \FloatTok{1.5}
+\NormalTok{tails\_multiplier }\OtherTok{\textless{}{-}} \FloatTok{0.6}
+\NormalTok{n\_years }\OtherTok{\textless{}{-}} \DecValTok{35}
+\NormalTok{n\_simulations }\OtherTok{\textless{}{-}} \DecValTok{100}
+
+\CommentTok{\# Function to simulate one complete game}
+\NormalTok{simulate\_investment\_game }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(initial, years, heads\_mult, tails\_mult) \{}
+\NormalTok{  balance }\OtherTok{\textless{}{-}}\NormalTok{ initial}
+  \ControlFlowTok{for}\NormalTok{ (year }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{years) \{}
+\NormalTok{    coin\_flip }\OtherTok{\textless{}{-}} \FunctionTok{rbinom}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\FloatTok{0.5}\NormalTok{)}
+    \ControlFlowTok{if}\NormalTok{ (coin\_flip }\SpecialCharTok{==} \DecValTok{1}\NormalTok{) \{}
+\NormalTok{      balance }\OtherTok{\textless{}{-}}\NormalTok{ balance }\SpecialCharTok{*}\NormalTok{ heads\_mult}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{      balance }\OtherTok{\textless{}{-}}\NormalTok{ balance }\SpecialCharTok{*}\NormalTok{ tails\_mult}
+\NormalTok{    \}}
+\NormalTok{  \}}
+  \FunctionTok{return}\NormalTok{(balance)}
+\NormalTok{\}}
+
+\CommentTok{\# Run 100 simulations (same as Question 4)}
+\NormalTok{final\_balances }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(n\_simulations, }
+  \FunctionTok{simulate\_investment\_game}\NormalTok{(initial\_balance, n\_years, heads\_multiplier, tails\_multiplier))}
+
+\CommentTok{\# Calculate probability that balance \textgreater{} $1,000}
+\NormalTok{prob\_above\_1000 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(final\_balances }\SpecialCharTok{\textgreater{}} \DecValTok{1000}\NormalTok{)}
+\NormalTok{prob\_below\_1000 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(final\_balances }\SpecialCharTok{\textless{}=} \DecValTok{1000}\NormalTok{)}
+
+\CommentTok{\# Calculate additional probability thresholds}
+\NormalTok{prob\_above\_10000 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(final\_balances }\SpecialCharTok{\textgreater{}} \DecValTok{10000}\NormalTok{)}
+\NormalTok{prob\_above\_100000 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(final\_balances }\SpecialCharTok{\textgreater{}} \DecValTok{100000}\NormalTok{)}
+
+\CommentTok{\# Calculate confidence interval for the probability}
+\NormalTok{n\_sims }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(final\_balances)}
+\NormalTok{se }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(prob\_above\_1000 }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ prob\_above\_1000) }\SpecialCharTok{/}\NormalTok{ n\_sims)}
+\NormalTok{ci\_lower }\OtherTok{\textless{}{-}}\NormalTok{ prob\_above\_1000 }\SpecialCharTok{{-}} \FloatTok{1.96} \SpecialCharTok{*}\NormalTok{ se}
+\NormalTok{ci\_upper }\OtherTok{\textless{}{-}}\NormalTok{ prob\_above\_1000 }\SpecialCharTok{+} \FloatTok{1.96} \SpecialCharTok{*}\NormalTok{ se}
+
+\CommentTok{\# Display results}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Probability Analysis Results:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+Probability Analysis Results:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"============================}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+============================
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Based on 100 simulations:}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Based on 100 simulations:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Probability that balance \textgreater{} $1,000 at age 55:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Probability that balance > $1,000 at age 55:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Point estimate: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(prob\_above\_1000 }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"\%}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Point estimate: 26%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  95\% Confidence Interval: ["}\NormalTok{, }\FunctionTok{round}\NormalTok{(ci\_lower }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"\%, "}\NormalTok{, }\FunctionTok{round}\NormalTok{(ci\_upper }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"\%]}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  95% Confidence Interval: [17.4%, 34.6%]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Number of simulations above $1,000: "}\NormalTok{, }\FunctionTok{sum}\NormalTok{(final\_balances }\SpecialCharTok{\textgreater{}} \DecValTok{1000}\NormalTok{), }\StringTok{" out of "}\NormalTok{, n\_sims, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Number of simulations above $1,000: 26 out of 100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Additional Probability Thresholds:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Additional Probability Thresholds:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Probability \textgreater{} $10,000: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(prob\_above\_10000 }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"\%}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Probability > $10,000: 5%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Probability \textgreater{} $100,000: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(prob\_above\_100000 }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"\%}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Probability > $100,000: 0%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Interpretation:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Interpretation:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (prob\_above\_1000 }\SpecialCharTok{\textgreater{}} \FloatTok{0.5}\NormalTok{) \{}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"  ✓ More likely than not to end up above $1,000}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+  \FunctionTok{cat}\NormalTok{(}\StringTok{"  ✗ More likely to end up at or below $1,000}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  ✗ More likely to end up at or below $1,000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Risk Assessment:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Risk Assessment:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Probability of losing money: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(prob\_below\_1000 }\SpecialCharTok{*} \DecValTok{100}\NormalTok{, }\DecValTok{1}\NormalTok{), }\StringTok{"\%}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Probability of losing money: 74%
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Expected final balance: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(final\_balances), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Expected final balance: $3001.49
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Median final balance: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(final\_balances), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Median final balance: $100.06
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Show distribution summary}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{Distribution Summary:}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+
+Distribution Summary:
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Minimum: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{min}\NormalTok{(final\_balances), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Minimum: $0.41
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Maximum: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{max}\NormalTok{(final\_balances), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Maximum: $61073.66
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"  Standard deviation: $"}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{sd}\NormalTok{(final\_balances), }\DecValTok{2}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, }\AttributeTok{sep =} \StringTok{""}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  Standard deviation: $9520.97
+\end{verbatim}
 
 \subsubsection{100\% Grade}\label{grade-3}
 
