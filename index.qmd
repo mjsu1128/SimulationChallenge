@@ -228,7 +228,6 @@ simulate_investment_game <- function(initial, years, heads_mult, tails_mult) {
 }
 
 # Run 100 simulations
-cat("Running 100 simulations...\n")
 final_balances <- replicate(n_simulations, 
   simulate_investment_game(initial_balance, n_years, heads_multiplier, tails_multiplier))
 
@@ -292,6 +291,10 @@ cat("Below $1,000: ", sum(final_balances < 1000), " | $1,000-$10,000: ", sum(fin
 
 *Distribution plot shown above*
 
+**Comments on the Results:**
+
+After running 100 simulations, we can see that the majority of simulations (76) ended with a value below 1000. 21 of the simulations were moderately succesfull and resulted in earnings of between 1,000 and 10,000. Finally, we observed 5 extremely succesful trials that returned over 10,000, with the higest earning 61,000. Overall, this distribution shows us the high volatility of this game and displays the Simpson Paradox.
+
 ### 95% Grade
 
 5. **Probability Analysis:** What is the probability that your balance will be greater than $1,000 at age 55?
@@ -351,7 +354,7 @@ cat("95% Confidence Interval: [", round(ci_lower * 100, 1), "%, ", round(ci_uppe
 cat("Probability > $10,000: ", round(prob_above_10000 * 100, 1), "%\n", sep = "")
 cat("Expected final balance: $", round(mean(final_balances), 0), "\n", sep = "")
 ```
-**Answer:** 26% chance of having greater than $1,000 at age 55.
+**Answer:** The results from our 100 simulations show us a 26% chance of having greater than $1,000 at age 55.
 
 
 ### 100% Grade
@@ -360,7 +363,7 @@ cat("Expected final balance: $", round(mean(final_balances), 0), "\n", sep = "")
 
 ```{r}
 #| label: strategy-comparison
-#| #| echo: false
+#| echo: false
 # Question 6: Strategy Comparison
 # Set seed for reproducibility
 set.seed(123)
@@ -411,12 +414,10 @@ simulate_modified_strategy <- function(initial, years) {
 }
 
 # Run 100 simulations for original strategy
-cat("Running 100 simulations for Original Strategy...\n")
 orig_final_balances <- replicate(n_simulations, 
   simulate_original_strategy(initial_balance, n_years, orig_heads_multiplier, orig_tails_multiplier))
 
 # Run 100 simulations for modified strategy
-cat("Running 100 simulations for Modified Strategy...\n")
 mod_final_balances <- replicate(n_simulations, 
   simulate_modified_strategy(initial_balance, n_years))
 
@@ -486,8 +487,8 @@ cat("High success difference: ", round((mod_prob_above_10000 - orig_prob_above_1
 
 **Comments on the Results:**
 
-The strategy comparison reveals fascinating insights about risk management in investment strategies. The modified strategy, which only risks 50% of the current balance on each flip, shows significantly different characteristics compared to the original strategy that risks 100% of the balance. 
+The comparision between the modified strategy and the original strategy highlighed super interesting results regarding risk managment. The modified strategy, which only risks 50% of the current balance on each flip, shows significantly different characteristics compared to the original strategy that risks 100% of the balance. 
 
-The modified strategy demonstrates lower volatility and more conservative outcomes, with a higher probability of maintaining wealth above the initial $1,000 threshold. However, this comes at the cost of lower expected returns and reduced probability of achieving the high-reward outcomes that make the original strategy potentially lucrative.
+The modified strategy demonstrates lower volatility and more conservative outcomes, with a lower spread of outcomes. However, this comes at the cost of lower expected returns and reduced probability of exceeding the 1,000 dollar mark and achieving the high-reward outcomes that make the original strategy potentially beneficial.
 
-This analysis highlights a fundamental trade-off in investment strategy design: **risk reduction comes at the cost of potential upside**. The modified strategy provides more consistent, predictable outcomes but sacrifices the possibility of extreme gains that characterize the original high-risk approach. This comparison is particularly valuable for understanding how different risk management approaches can fundamentally alter the probability distribution of investment outcomes.
+This comparison highlights an interesting and fundamental trade-off in investment strategy design: **risk reduction comes at the cost of potential upside**. The modified strategy provides more consistent, predictable outcomes but sacrifices the possibility of extreme gains that the original high-risk approach provides. This comparison is value for seeing how different risk management approaches can alter the probability distribution of investment outcomes.
